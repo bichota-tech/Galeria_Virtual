@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Animacion lente</title>
+    <!-- <link rel="stylesheet" href="icono_estilo.css"> -->
+    <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: #f7f7f7;
+    }
+
+    .hamburguesa {
+      width: 80px;
+      height: 80px;
+      position: relative;
+      cursor: pointer;
+    }
+
+    .pala {
+      position: absolute;
+      left: 50%;
+      width: 40px;
+      height: 6px;
+      background-color: #000;
+      border-radius: 3px;
+      transform: translateX(-50%);
+      transform-origin: center center;
+      transition: 
+        transform 0.6s ease,
+        border-radius 0.4s ease;
+    }
+
+    /* Posiciones iniciales: horizontales tipo hamburguesa */
+    .pala:nth-child(1) { top: 20%; transition-delay: 0s; }
+    .pala:nth-child(2) { top: 40%; transition-delay: 0.05s; }
+    .pala:nth-child(3) { top: 60%; transition-delay: 0.1s; }
+    .pala:nth-child(4) { top: 80%; transition-delay: 0.15s; }
+
+    /* Animación al activar */
+    .hamburguesa.activo .pala {
+      border-radius: 50% 50%;
+    }
+
+    .hamburguesa.activo .pala:nth-child(1) {
+      transform: rotate(0deg) translate(0, -35px);
+    }
+
+    .hamburguesa.activo .pala:nth-child(2) {
+      transform: rotate(90deg) translate(0, -35px);
+    }
+
+    .hamburguesa.activo .pala:nth-child(3) {
+      transform: rotate(180deg) translate(0, -35px);
+    }
+
+    .hamburguesa.activo .pala:nth-child(4) {
+      transform: rotate(270deg) translate(0, -35px);
+    }
+  </style>
+</head>
+
+<body>
+    <div id="hamburguesa" class="hamburguesa">
+    <div class="pala"></div>
+    <div class="pala"></div>
+    <div class="pala"></div>
+    <div class="pala"></div>
+  </div>
+
+    <script>
+    const icono = document.getElementById("hamburguesa");
+    icono.addEventListener("click", function () {
+      this.classList.toggle("activo");
+    });
+  </script>
+</body>
+
+</html>
