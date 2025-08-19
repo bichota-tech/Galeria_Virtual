@@ -2,83 +2,43 @@
 <html lang="es">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Animacion lente</title>
-    <!-- <link rel="stylesheet" href="icono_estilo.css"> -->
-    <style>
-    body {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      background: #f7f7f7;
-    }
-
-    .hamburguesa {
-      width: 80px;
-      height: 80px;
-      position: relative;
-      cursor: pointer;
-    }
-
-    .pala {
-      position: absolute;
-      left: 50%;
-      width: 40px;
-      height: 6px;
-      background-color: #000;
-      border-radius: 3px;
-      transform: translateX(-50%);
-      transform-origin: center center;
-      transition: 
-        transform 0.6s ease,
-        border-radius 0.4s ease;
-    }
-
-    /* Posiciones iniciales: horizontales tipo hamburguesa */
-    .pala:nth-child(1) { top: 20%; transition-delay: 0s; }
-    .pala:nth-child(2) { top: 40%; transition-delay: 0.05s; }
-    .pala:nth-child(3) { top: 60%; transition-delay: 0.1s; }
-    .pala:nth-child(4) { top: 80%; transition-delay: 0.15s; }
-
-    /* Animación al activar */
-    .hamburguesa.activo .pala {
-      border-radius: 50% 50%;
-    }
-
-    .hamburguesa.activo .pala:nth-child(1) {
-      transform: rotate(0deg) translate(0, -35px);
-    }
-
-    .hamburguesa.activo .pala:nth-child(2) {
-      transform: rotate(90deg) translate(0, -35px);
-    }
-
-    .hamburguesa.activo .pala:nth-child(3) {
-      transform: rotate(180deg) translate(0, -35px);
-    }
-
-    .hamburguesa.activo .pala:nth-child(4) {
-      transform: rotate(270deg) translate(0, -35px);
-    }
-  </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="style_burguer.css">
 </head>
 
 <body>
-    <div id="hamburguesa" class="hamburguesa">
-    <div class="pala"></div>
-    <div class="pala"></div>
-    <div class="pala"></div>
-    <div class="pala"></div>
-  </div>
+  <nav class="menu">
+    <input type="checkbox" href="#" class="menu-open" name="menu-open" id="menu-open" />
+    <label class="menu-open-button" for="menu-open">
+      <span class="hamburger hamburger-1"></span>
+      <span class="hamburger hamburger-2"></span>
+      <span class="hamburger hamburger-3"></span>
+    </label>
 
-    <script>
-    const icono = document.getElementById("hamburguesa");
-    icono.addEventListener("click", function () {
-      this.classList.toggle("activo");
-    });
-  </script>
+    <a href="#" class="menu-item" > <i class="bi bi-house"></i></a>
+    <a href="#" class="menu-item"> <i class="bi bi-camera2"></i> </a>
+    <a href="#" class="menu-item"> <i class="bi bi-person-lines-fill"></i> </a>
+    <a href="#" class="menu-item"> <i class="bi bi-images"></i> </a>
+  </nav>
+
+  <!-- filters -->
+  <svg xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <filter id="shadowed-goo">
+        <feGaussianBlur in="SourceGraphic" result="blur" stdDeviation="10" />
+        <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="goo" />
+        <feGaussianBlur in="goo" stdDeviation="3" result="shadow" />
+        <feColorMatrix in="shadow" mode="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 1 -0.2"
+          result="shadow" />
+        <feOffset in="shadow" dx="1" dy="1" result="shadow" />
+        <feComposite in2="shadow" in="goo" result="goo" />
+        <feComposite in2="goo" in="SourceGraphic" result="mix" />
+      </filter>
+      
+    </defs>
+  </svg>
 </body>
 
 </html>
