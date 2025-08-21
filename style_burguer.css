@@ -5,14 +5,14 @@
 .menu-item, .menu-open-button {
   background: #00bcd4;
   border-radius: 100%;
-  width: 80px;
-  height: 80px;
-  margin-left: -40px;
+  width:  50px;
+  height: 50px;
+  margin-left: -180px;
   position: absolute;
   top: 20px;
   color: white;
   text-align: center;
-  line-height: 80px;
+  line-height: 58px;
   transform: translate3d(0, 0, 0);
   transition: transform ease-out 200ms;
 }
@@ -26,7 +26,7 @@
   height: 3px;
   background: white;
   display: block;
-  position: absolute;
+  position: relative;
   top: 50%;
   left: 50%;
   margin-left: -12.5px;
@@ -57,7 +57,7 @@
 }
 
 .menu {
-  position: absolute;
+  position: relative;
   left: 50%;
   margin-left: -80px;
   padding-top: 20px;
@@ -109,17 +109,17 @@
 } 
 .menu-open:checked ~ .menu-item:nth-child(3) {
   transition-duration: 190ms;
-  transform: translateY(100px);
+  transform: translateY(56px);
 }
 .menu-open:checked ~ .menu-item:nth-child(4) {
   transition-duration: 290ms;
-  transform: translateY(203px);
+  transform: translateY(117px);
 }
 .menu-open:checked ~ .menu-item:nth-child(5) {
   transition-duration: 390ms;
-  transform: translateY(303px);
+  transform: translateY(178px);
 }
 .menu-open:checked ~ .menu-item:nth-child(6) {
   transition-duration: 490ms;
-  transform: translateY(405px);
+  transform: translateY(239px);
 } 

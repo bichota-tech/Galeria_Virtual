@@ -7,9 +7,26 @@
     <title>title</title>
 </head>
 <body>
-    <div>
-        <button onclick="location.href='gallery.html'">Ver Galería</button>
-    </div>
+    <header>
+        <div id="menu"></div>
+        
+    </header>
+    
+    
+    
+    
+    
 
+
+
+
+
+
+    
+    <script>
+        fetch("icono_hamburguesa.html").then(res => res.text()).then(data =>{
+            document.getElementById("menu").innerHTML = data;
+        })
+    </script>
 </body>
 </html>
