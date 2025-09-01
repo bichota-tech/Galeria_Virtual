@@ -1,23 +1,47 @@
+body{
+  margin: 0;
+  padding: 0;
+}
+
+header{
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
 .menu {
   filter: url("#shadowed-goo");
 }
 
+
+
 .menu-item, .menu-open-button {
-  background: #00bcd4;
+  background: rgba(0, 0, 0, 0.850);
   border-radius: 100%;
-  width:  50px;
-  height: 50px;
-  margin-left: -180px;
+  width:  3.125rem;
+  height: 3.125rem;
+  margin-left: -11.25rem;
   position: absolute;
-  top: 20px;
+  top: 1.25rem;
   color: white;
   text-align: center;
-  line-height: 58px;
+  line-height: 3.625rem;
   transform: translate3d(0, 0, 0);
   transition: transform ease-out 200ms;
 }
 
+.menu-open-button{
+  background: linear-gradient(rgba(0, 0, 0, 0.3),
+    rgba(0, 0, 0, 0.3) ),url("imag-videp/hevcalogo.jpeg");
+  background-position: center;
+  background-size: contain;
+}
+
 .menu-open {
+  display: none;
+}
+
+svg{
   display: none;
 }
 
@@ -26,12 +50,13 @@
   height: 3px;
   background: white;
   display: block;
-  position: relative;
+  position: absolute;
   top: 50%;
   left: 50%;
   margin-left: -12.5px;
   margin-top: -1.5px;
   transition: transform 200ms;
+  display: none;
 }
 
 .hamburger-1 {
@@ -57,16 +82,17 @@
 }
 
 .menu {
-  position: relative;
+  position: absolute;
   left: 50%;
-  margin-left: -80px;
-  padding-top: 20px;
-  padding-left: 80px;
-  width: 650px;
-  height: 150px;
+  margin-left: 11em;
+  padding-top: 1.25em;
+  padding-left: 4em;
+  width: 3.75em;
+  height: 9.3em;
   box-sizing: border-box;
-  font-size: 20px;
+  font-size: 1.25rem;
   text-align: left;
+  z-index: 1000;
 }
 
 .menu-item:hover {
@@ -109,17 +135,17 @@
 } 
 .menu-open:checked ~ .menu-item:nth-child(3) {
   transition-duration: 190ms;
-  transform: translateY(56px);
+  transform: translate3d(-61px, 0, 0);
 }
 .menu-open:checked ~ .menu-item:nth-child(4) {
   transition-duration: 290ms;
-  transform: translateY(117px);
+  transform: translate3d(-129px, 0, 0);
 }
 .menu-open:checked ~ .menu-item:nth-child(5) {
   transition-duration: 390ms;
-  transform: translateY(178px);
+  transform: translate3d(-197px, 0, 0);
 }
 .menu-open:checked ~ .menu-item:nth-child(6) {
   transition-duration: 490ms;
-  transform: translateY(239px);
+  transform: translate3d(-265px, 0, 0);
 } 

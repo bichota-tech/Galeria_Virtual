@@ -1,0 +1,88 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+
+    background-color: rgb(243, 243, 243);
+    width: 100%;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    width: 100%;
+}
+
+div#menu {
+    z-index: 1000;
+}
+
+video.prueba {
+    display: none;
+    align-self: center;
+    width: 92%;
+    padding: 0;
+    margin-block: 5rem;
+    margin-inline: 1rem;
+}
+
+div.container {
+    /* background: linear-gradient(rgba(0, 0, 0, 0.7),
+    rgba(0, 0, 0, 0.7) ),url("imag-videp/hevcaback1.jpeg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 12rem;*/
+    
+    margin-top: 5rem;
+    padding-block: 1rem;
+} 
+
+h1.title, h4.subtitle {
+    text-align: center;
+    cursor: default; 
+    z-index: 1000;
+}
+
+p{
+    display: none;
+}
+
+.swiper {
+  width: 90%;
+  max-width: 900px;
+  height: 200px; /* ajusta a tu gusto */
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+.swiper-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+
+/* section.sesiones{
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+    width: 100%;
+}
+
+.mapahover{
+    overflow: hidden;
+    position: relative;
+}
+ */
+
+
+
+
+
+
