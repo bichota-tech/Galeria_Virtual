@@ -1,39 +1,47 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="stylesheet" href="assets/index_style.css">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
             integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
             crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+        <link rel="stylesheet" href="assets/index_style.css">
         <title>title</title>
     </head>
 
     <body>
         <header>
-            <nav class="container">
-                <div id="menu"></div>
-                <video src="imag-videp/video_prueba.mp4" width="375px" class="prueba" autoplay muted></video>
-            </nav>
+            <div class="logo"><img src="multimedia/Hevca (3).png" alt="hevca"></div>
+            <div class="menunav">
+                <a href="#">INICIO</a>
+                <a href="#">SERVICIOS</a>
+                <a href="#">PORTAFOLIO</a>
+                <a href="#">CLIENTES</a>
+                <a href="#">SOBRE MÍ</a>
+                <a href="#">CONTACTO</a>
+                <a href="#" class="button">AGENDA TU SESIÓN</a> 
+            </div>
+
+            <div id="menu"></div>
 
         </header>
         <main>
-            
-            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-                <ol class="carousel-indicators">
-                    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-                </ol>
+
+            <div id="mycarousel" class="carousel slide" data-ride="carousel">
+
                 <div class="carousel-inner">
+
                     <div class="carousel-item active">
-                        <img class="d-block w-100" src="multimedia/butterfly-3503733_640.jpg" alt="First slide">
+                        <img class="d-block w-100" src="multimedia/milky-way-2695569_1920.jpg" alt="First slide">
+                        <div class="carousel-caption">
+                            <h1>Fotografía Profesional</h1>
+                            <h4>"Mirada experta, fotos con alma"</h4>
+                            <a href="#" class="button">SOLICITA PRESUPUESTO</a> 
+                        </div>
                     </div>
                     <div class="carousel-item">
                         <img class="d-block w-100" src="multimedia/mushroom-8313142_640.jpg" alt="Second slide">
@@ -42,21 +50,21 @@
                         <img class="d-block w-100" src="multimedia/mushrooms-3647871_640.jpg" alt="Third slide">
                     </div>
                 </div>
-                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                <a class="carousel-control-prev" href="#mycarousel" role="button" id="prevBtn" data-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Previous</span>
+                    <span class="sr-only"></span>
                 </a>
-                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                <a class="carousel-control-next" href="#mycarousel" role="button" id="nextBtn" data-slide="next">
                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Next</span>
+                    <span class="sr-only"></span>
                 </a>
             </div>
 
-            <h1 class="title">Fotografía Profesional</h1>
-            <h4 class="subtitle">"Mirada experta, fotos con alma"</h4>
-            <p>Cada sesión es más que una imagen: es un reflejo de tu esencia, capturado con precisión, luz y
-                ensibilidad.
-            </p>
+            <section class="servicios">
+
+            </section>
+
+
 
 
         </main>
@@ -64,11 +72,8 @@
         <script>
             fetch("icono_hamburguesa.html").then(res => res.text()).then(data => {
                 document.getElementById("menu").innerHTML = data;
-            })
+            });
 
-            $('.carousel').carousel({
-                interval: 2000
-            })
         </script>
         <script src="js/script.js"></script>
     </body>

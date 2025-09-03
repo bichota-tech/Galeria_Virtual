@@ -3,149 +3,121 @@ body{
   padding: 0;
 }
 
-header{
-  top: 0;
-  left: 0;
-  width: 100%;
+
+/* Menú hamburguesa */
+.menu {
+    filter: url("#shadowed-goo");
 }
 
 .menu {
-  filter: url("#shadowed-goo");
+    position: absolute;
+    top: 1rem;
+    right: 2rem;
+    display: flex;
+    flex-direction: row-reverse; /* abre de der a izq */
+    align-items: center;
 }
 
-
-
-.menu-item, .menu-open-button {
-  background: rgba(0, 0, 0, 0.850);
-  border-radius: 100%;
-  width:  3.125rem;
-  height: 3.125rem;
-  margin-left: -11.25rem;
-  position: absolute;
-  top: 1.25rem;
-  color: white;
-  text-align: center;
-  line-height: 3.625rem;
-  transform: translate3d(0, 0, 0);
-  transition: transform ease-out 200ms;
+/* Botón principal */
+.menu-item,
+.menu-open-button {
+    background: black;
+    border-radius: 50%;
+    width: clamp(2.3rem, 4vw, 3rem);
+    height: clamp(2.3rem, 4vw, 3rem);
+    color: bisque;
+    text-align: center;
+    line-height: clamp(2.3rem, 4vw, 3rem);
+    cursor: pointer;
+    transition: transform 200ms ease-out;
+    position: relative;
 }
 
-.menu-open-button{
-  background: linear-gradient(rgba(0, 0, 0, 0.3),
-    rgba(0, 0, 0, 0.3) ),url("imag-videp/hevcalogo.jpeg");
-  background-position: center;
-  background-size: contain;
+img.item {
+    vertical-align: middle;
+    width: clamp(1.3rem, 2vw, 1.8rem);
 }
 
-.menu-open {
-  display: none;
-}
-
-svg{
-  display: none;
-}
-
+/* Hamburguesa centrada en el botón */
 .hamburger {
-  width: 25px;
-  height: 3px;
-  background: white;
-  display: block;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  margin-left: -12.5px;
-  margin-top: -1.5px;
-  transition: transform 200ms;
-  display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: clamp(.9rem, 2vw, 1.2rem);
+    height: 3px;
+    background: bisque;
+    transition: transform 200ms;
 }
 
 .hamburger-1 {
-  transform: translate3d(0, -8px, 0);
+    transform: translate(-50%, calc(-50% - 6px));
 }
 
 .hamburger-2 {
-  transform: translate3d(0, 0, 0);
+    transform: translate(-50%, -50%);
 }
 
 .hamburger-3 {
-  transform: translate3d(0, 8px, 0);
+    transform: translate(-50%, calc(-50% + 6px));
 }
 
-.menu-open:checked + .menu-open-button .hamburger-1 {
-  transform: translate3d(0, 0, 0) rotate(45deg);
-}
-.menu-open:checked + .menu-open-button .hamburger-2 {
-  transform: translate3d(0, 0, 0) scale(0.1, 1);
-}
-.menu-open:checked + .menu-open-button .hamburger-3 {
-  transform: translate3d(0, 0, 0) rotate(-45deg);
+/* Checkbox oculto */
+.menu-open {
+    display: none;
 }
 
-.menu {
-  position: absolute;
-  left: 50%;
-  margin-left: 11em;
-  padding-top: 1.25em;
-  padding-left: 4em;
-  width: 3.75em;
-  height: 9.3em;
-  box-sizing: border-box;
-  font-size: 1.25rem;
-  text-align: left;
-  z-index: 1000;
+/* Estado abierto */
+.menu-open:checked+.menu-open-button .hamburger-1 {
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.menu-open:checked+.menu-open-button .hamburger-2 {
+    opacity: 0;
+}
+
+.menu-open:checked+.menu-open-button .hamburger-3 {
+    transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+/* Items ocultos por defecto */
+.menu-item {
+    opacity: 0;
+    pointer-events: none;
+    transform: translate3d(-50px, 0, 0);
+    /* desplazados a la izquierda */
+    transition: transform 400ms ease, opacity 400ms ease;
+    margin-left: .5rem;
 }
 
 .menu-item:hover {
-  background: white;
-  color: #00bcd4;
-}
-.menu-item:nth-child(3) {
-  transition-duration: 180ms;
-}
-.menu-item:nth-child(4) {
-  transition-duration: 180ms;
-}
-.menu-item:nth-child(5) {
-  transition-duration: 180ms;
-}
-.menu-item:nth-child(6) {
-  transition-duration: 180ms;
-}
-
-.menu-open-button {
-  z-index: 2;
-  transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  transition-duration: 400ms;
-  transform: scale(1.1, 1.1) translate3d(0, 0, 0);
-  cursor: pointer;
+    background: goldenrod;
 }
 
 .menu-open-button:hover {
-  transform: scale(1.2, 1.2) translate3d(0, 0, 0);
+    transform: scale(1.2, 1.2) translate3d(0, 0, 0);
 }
 
-.menu-open:checked + .menu-open-button {
-  transition-timing-function: linear;
-  transition-duration: 200ms;
-  transform: scale(0.8, 0.8) translate3d(0, 0, 0);
+/* Al abrir menú aparecen */
+.menu-open:checked~.menu-item {
+    transform: translate3d(0, 0, 0);
+    /* posición original */
+    opacity: 1;
+    pointer-events: auto;
 }
 
-.menu-open:checked ~ .menu-item {
-  transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
-} 
-.menu-open:checked ~ .menu-item:nth-child(3) {
-  transition-duration: 190ms;
-  transform: translate3d(-61px, 0, 0);
+.menu-open:checked~.menu-item:nth-of-type(1) {
+    transition-delay: 100ms;
 }
-.menu-open:checked ~ .menu-item:nth-child(4) {
-  transition-duration: 290ms;
-  transform: translate3d(-129px, 0, 0);
+
+.menu-open:checked~.menu-item:nth-of-type(2) {
+    transition-delay: 200ms;
 }
-.menu-open:checked ~ .menu-item:nth-child(5) {
-  transition-duration: 390ms;
-  transform: translate3d(-197px, 0, 0);
+
+.menu-open:checked~.menu-item:nth-of-type(3) {
+    transition-delay: 300ms;    
 }
-.menu-open:checked ~ .menu-item:nth-child(6) {
-  transition-duration: 490ms;
-  transform: translate3d(-265px, 0, 0);
+
+.menu-open:checked~.menu-item:nth-of-type(4) {
+  transition-delay: 400ms;
 } 
