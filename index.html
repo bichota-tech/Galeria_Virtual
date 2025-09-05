@@ -9,13 +9,14 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
             crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/mixitup/dist/mixitup.min.js"></script>
         <link rel="stylesheet" href="assets/index_style.css">
         <title>title</title>
     </head>
 
     <body>
         <header>
-            <div class="logo"><img src="multimedia/Hevca (3).png" alt="hevca"></div>
+            <div class="logo"><img src="multimedia/Hevca.png" alt="hevca"></div>
             <div class="menunav">
                 <a href="#">INICIO</a>
                 <a href="#">SERVICIOS</a>
@@ -23,24 +24,19 @@
                 <a href="#">CLIENTES</a>
                 <a href="#">SOBRE MÍ</a>
                 <a href="#">CONTACTO</a>
-                <a href="#" class="button">AGENDA TU SESIÓN</a> 
+                <a href="#" class="button">AGENDA TU SESIÓN</a>
             </div>
-
             <div id="menu"></div>
-
         </header>
         <main>
-
             <div id="mycarousel" class="carousel slide" data-ride="carousel">
-
                 <div class="carousel-inner">
-
                     <div class="carousel-item active">
                         <img class="d-block w-100" src="multimedia/milky-way-2695569_1920.jpg" alt="First slide">
                         <div class="carousel-caption">
                             <h1>Fotografía Profesional</h1>
                             <h4>"Mirada experta, fotos con alma"</h4>
-                            <a href="#" class="button">SOLICITA PRESUPUESTO</a> 
+                            <a href="#" class="button">SOLICITA PRESUPUESTO</a>
                         </div>
                     </div>
                     <div class="carousel-item">
@@ -61,6 +57,143 @@
             </div>
 
             <section class="servicios">
+                <h2 class="title">Servicios Profesionales</h2>
+                <h5 class="description">Servicios de fotografía adaptados a empresas, profesionales y proyectos
+                    personales.</h5>
+                <div class="sesiones">
+                    <div class="card" style="width: 18rem;">
+                        <img src="multimedia/mushrooms-3647871_640.jpg" alt="corporativo" class="card-img-top">
+                        <div class="card-body">
+                            <p class="card-text">Retratos Corporativos
+                            </p>
+                            <a href="#" class="btn btn-primary">Más Información</a>
+                        </div>
+                    </div>
+                    <div class="card" style="width: 18rem;">
+                        <img src="multimedia/mushrooms-3647871_640.jpg" alt="comercial" class="card-img-top">
+                        <div class="card-body">
+                            <p class="card-text">Fotografía Comercial</p>
+                            <a href="#" class="btn btn-primary">Más Información</a>
+                        </div>
+                    </div>
+                    <div class="card" style="width: 18rem;">
+                        <img src="multimedia/mushrooms-3647871_640.jpg" alt="boudoirArt" class="card-img-top">
+                        <div class="card-body">
+                            <p class="card-text">Boudoir & Artístico</p>
+                            <a href="#" class="btn btn-primary">Más Información</a>
+                        </div>
+                    </div>
+                    <div class="card" style="width: 18rem;">
+                        <img src="multimedia/mushrooms-3647871_640.jpg" alt="eventos" class="card-img-top">
+                        <div class="card-body">
+                            <p class="card-text">Eventos Especiales</p>
+                            <a href="#" class="btn btn-primary">Más Información</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="portafolio">
+                <h2 class="title">Proyectos Recientes</h2>
+                <div class="mb-4 text-center">
+                    <button class="btn btn-outline-dark mx-1" data-filter="all">Todos</button>
+                    <button class="btn btn-outline-dark mx-1" data-filter=".corporativo">Corporativos</button>
+                    <button class="btn btn-outline-dark mx-1" data-filter=".comercial">Comercial</button>
+                    <button class="btn btn-outline-dark mx-1" data-filter=".boudoirArt">Boudoir & Artístico</button>
+                    <button class="btn btn-outline-dark mx-1" data-filter=".especial">Especiales</button>
+                </div>
+                <!-- Contenedor de sesiones -->
+                <div class="row container-filtros">
+                    <!-- Corporativo -->
+                    <div class="col-md-3 mix corporativo inicial">
+                        <img src="multimedia/mushrooms-3647871_640.jpg" alt="corporativo" class="card-img-top">
+                        <div class="card p-3">Corporativo</div>
+                    </div>
+                    <div class="col-md-3 mix corporativo">
+                        <img src="multimedia/mushrooms-3647871_640.jpg" alt="corporativo" class="card-img-top">
+                        <div class="card p-3">Corporativo</div>
+                    </div>
+                    <!-- Comercial -->
+                    <div class="col-md-3 mix comercial inicial">
+                        <img src="multimedia/mushrooms-3647871_640.jpg" alt="corporativo" class="card-img-top">
+                        <div class="card p-3">Comercial</div>
+                    </div>
+                    <div class="col-md-3 mix comercial">
+                        <img src="multimedia/mushrooms-3647871_640.jpg" alt="corporativo" class="card-img-top">
+                        <div class="card p-3">Comercial</div>
+                    </div>
+                    <!-- BoudoirArt -->
+                    <div class="col-md-3 mix boudoirArt inicial">
+                        <img src="multimedia/mushrooms-3647871_640.jpg" alt="corporativo" class="card-img-top">
+                        <div class="card p-3">Boudoir & Artístico</div>
+                    </div>
+                    <div class="col-md-3 mix boudoirArt">
+                        <img src="multimedia/mushrooms-3647871_640.jpg" alt="corporativo" class="card-img-top">
+                        <div class="card p-3">Boudoir & Artístico</div>
+                    </div>
+                    <!-- Especiales -->
+                    <div class="col-md-3 mix especial inicial">
+                        <img src="multimedia/mushrooms-3647871_640.jpg" alt="corporativo" class="card-img-top">
+                        <div class="card p-3">Especiales</div>
+                    </div>
+                    <div class="col-md-3 mix especial">
+                        <img src="multimedia/mushrooms-3647871_640.jpg" alt="corporativo" class="card-img-top">
+                        <div class="card p-3">Especiales</div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="testimonios">
+                <h2 class="title">Confían en nosotros</h2>
+                <!-- Carrusel de clientes -->
+                <div id="carouselClientes" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+
+                        <div class="carousel-item active">
+                            <div class="cliente text-center">
+                                <img src="multimedia/mushrooms-3647871_640.jpg" class="d-block mx-auto rounded-square"
+                                    alt="cliente1">
+                                <div class="subtitle mt-3">
+                                    <h5>Gracias a Hevca PhotoArt logramos una imagen profesional que refuerza la marca."</h5>
+                                    <p>Ana Gómez, Directora de Marketing</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="carousel-item">
+                            <div class="cliente text-center">
+                                <img src="multimedia/mushrooms-3647871_640.jpg" class="d-block mx-auto rounded-square"
+                                    alt="cliente2" width="150">
+                                <div class="subtitle mt-3">
+                                    <h5>Gracias a Hevca PhotoArt logramos una imagen profesional que refuerza la marca."</h5>
+                                    <p>Ana Gómez, Directora de Marketing</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="carousel-item">
+                            <div class="cliente text-center">
+                                <img src="multimedia/mushrooms-3647871_640.jpg" class="d-block mx-auto rounded-square"
+                                    alt="cliente3" width="150">
+                                <div class="subtitle mt-3">
+                                    <h5>Gracias a Hevca PhotoArt logramos una imagen profesional que refuerza la marca."</h5>
+                                    <p>Ana Gómez, Directora de Marketing</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Controles opcionales
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselClientes"
+                        data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon"></span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselClientes"
+                        data-bs-slide="next">
+                        <span class="carousel-control-next-icon"></span>
+                    </button> -->
+                </div>
 
             </section>
 
@@ -68,12 +201,10 @@
 
 
         </main>
-
         <script>
             fetch("icono_hamburguesa.html").then(res => res.text()).then(data => {
                 document.getElementById("menu").innerHTML = data;
             });
-
         </script>
         <script src="js/script.js"></script>
     </body>
