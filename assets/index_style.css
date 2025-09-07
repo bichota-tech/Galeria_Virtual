@@ -280,8 +280,8 @@ div.description img {
 /*Contacto -+-+-+-+-*/
 
 section.contacto {
-    background: url(/multimedia/contact_background.png);
-    background-position: center;
+    background: url(/multimedia/contact_background.png) !important;
+    background-position: center !important;
 }
 
 .container.py-5{
