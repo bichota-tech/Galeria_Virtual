@@ -89,6 +89,29 @@ var mixer = mixitup('.container-filtros', {
 // 👉 Mostrar inicialmente solo 1 sesión por categoría
 mixer.filter('.inicial');
 
+// Validación Bootstrap + feedback
+    (function () {
+      'use strict'
+      const form = document.getElementById('contactForm');
+      const successMsg = document.getElementById('successMsg');
+      const errorMsg = document.getElementById('errorMsg');
+
+      form.addEventListener('submit', function (event) {
+        event.preventDefault();
+        if (!form.checkValidity()) {
+          event.stopPropagation();
+          form.classList.add('was-validated');
+        } else {
+          // Simulación de envío
+          successMsg.classList.remove('d-none');
+          errorMsg.classList.add('d-none');
+          form.reset();
+          form.classList.remove('was-validated');
+        }
+      }, false);
+    })();
+
+
 
 
 

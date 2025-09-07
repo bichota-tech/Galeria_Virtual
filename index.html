@@ -16,7 +16,7 @@
 
     <body>
         <header>
-            <div class="logo"><img src="multimedia/Hevca.png" alt="hevca"></div>
+            <div class="logo"><img src="multimedia/logo_hevca.png" alt="logo marca"></div>
             <div class="menunav">
                 <a href="#">INICIO</a>
                 <a href="#">SERVICIOS</a>
@@ -148,42 +148,40 @@
                 <!-- Carrusel de clientes -->
                 <div id="carouselClientes" class="carousel slide" data-bs-ride="carousel">
                     <div class="carousel-inner">
-
                         <div class="carousel-item active">
                             <div class="cliente text-center">
                                 <img src="multimedia/mushrooms-3647871_640.jpg" class="d-block mx-auto rounded-square"
                                     alt="cliente1">
                                 <div class="subtitle mt-3">
-                                    <h5>Gracias a Hevca PhotoArt logramos una imagen profesional que refuerza la marca."</h5>
+                                    <h5>Gracias a Hevca PhotoArt logramos una imagen profesional que refuerza la marca."
+                                    </h5>
                                     <p>Ana Gómez, Directora de Marketing</p>
                                 </div>
                             </div>
                         </div>
-
                         <div class="carousel-item">
                             <div class="cliente text-center">
                                 <img src="multimedia/mushrooms-3647871_640.jpg" class="d-block mx-auto rounded-square"
                                     alt="cliente2" width="150">
                                 <div class="subtitle mt-3">
-                                    <h5>Gracias a Hevca PhotoArt logramos una imagen profesional que refuerza la marca."</h5>
+                                    <h5>Gracias a Hevca PhotoArt logramos una imagen profesional que refuerza la marca."
+                                    </h5>
                                     <p>Ana Gómez, Directora de Marketing</p>
                                 </div>
                             </div>
                         </div>
-
                         <div class="carousel-item">
                             <div class="cliente text-center">
                                 <img src="multimedia/mushrooms-3647871_640.jpg" class="d-block mx-auto rounded-square"
                                     alt="cliente3" width="150">
                                 <div class="subtitle mt-3">
-                                    <h5>Gracias a Hevca PhotoArt logramos una imagen profesional que refuerza la marca."</h5>
+                                    <h5>Gracias a Hevca PhotoArt logramos una imagen profesional que refuerza la marca."
+                                    </h5>
                                     <p>Ana Gómez, Directora de Marketing</p>
                                 </div>
                             </div>
                         </div>
-
                     </div>
-
                     <!-- Controles opcionales
                     <button class="carousel-control-prev" type="button" data-bs-target="#carouselClientes"
                         data-bs-slide="prev">
@@ -194,12 +192,127 @@
                         <span class="carousel-control-next-icon"></span>
                     </button> -->
                 </div>
+                <div class="imgdecoration">
+                    <img class="decoration" src="multimedia/deco.png" alt="imagen decorativa">
+                </div>
+            </section>
+
+            <section class="aboutme">
+                <h2 class="title">Detrás del lente</h2>
+                <div class="description">
+                    <img src="multimedia/woman640.png" alt="fotoperfil">
+                    <h5>Lorem ipsum dolor, sit amet consectetu adipisicing elit. Sint optio necessitatibus sunt
+                        odit nam deserunt aut temporibus aliquam corporis alias eaque nisi saepe adipisci id culpa
+                        cumque eligendi, doloremque eius dolores. Vel itaque accusantium molestiae, distinctio, odio
+                        ipsa error corrupti veritatis in excepturi soluta assumenda architecto dolore hic nostrum
+                        magnam!</h5>
+                </div>
+            </section>
+
+            <section class="contacto">
+                <h2 class="title">Hablemos de tí</h2>
+                <div class="container py-5">
+                    <div class="row justify-content-center">
+                        <div class="col-md-8 col-lg-6">
+                            <div class="contact-card">
+                                <h4 class="text-center mb-4">Contáctame</h4>
+                                <form id="contactForm" novalidate>
+
+                                    <!-- Nombre -->
+                                    <div class="mb-3 position-relative">
+                                        <i class="bi bi-person input-icon"></i>
+                                        <input type="text" class="form-control" id="nombre"
+                                            placeholder="Nombre completo" required>
+                                        <div class="invalid-feedback">Por favor escribe tu nombre.</div>
+
+                                    </div>
+
+                                    <!-- Email -->
+                                    <div class="mb-3 position-relative">
+                                        <i class="bi bi-envelope input-icon"></i>
+                                        <input type="email" class="form-control" id="email"
+                                            placeholder="Correo electrónico" required>
+                                        <div class="invalid-feedback">Introduce un correo válido.</div>
+                                    </div>
+
+                                    <!-- Servicio -->
+                                    <div class="mb-3 position-relative">
+                                        <i class="bi bi-camera2 input-icon"></i>
+                                        <input type="text" class="form-control" id="service"
+                                            placeholder="Cuál sesión te ha gustado" required>
+                                        <div class="invalid-feedback">Indica la Sesión escogida</div>
+                                    </div>
+
+                                    <!-- Mensaje -->
+                                    <div class="mb-3 position-relative">
+                                        <i class="bi bi-pencil-square input-icon"></i>
+                                        <textarea class="form-control" id="mensaje" rows="5"
+                                            placeholder="Escribe tu mensaje..." required></textarea>
+                                        <div class="invalid-feedback">El mensaje no puede estar vacío.</div>
+                                    </div>
+
+                                    <!-- Botón -->
+                                    <div class="d-grid">
+                                        <button type="submit" class="btn btn-custom btn-lg">
+                                            <i class="bi bi-send"></i> Enviar Mensaje
+                                        </button>
+                                    </div>
+
+                                </form>
+
+                                <!-- Mensajes de feedback -->
+                                <div class="alert alert-success mt-3 d-none" id="successMsg">
+                                    ✅ Tu mensaje fue enviado con éxito.
+                                </div>
+                                <div class="alert alert-danger mt-3 d-none" id="errorMsg">
+                                    ❌ Hubo un error, inténtalo de nuevo.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="socialmedia">
+                        <a href="http://instagram.com/hevca_photoart" class="mx-2" target="_blank"
+                            rel="noopener noreferrer">
+                            <i class="bi bi-instagram"></i>
+                        </a>
+                        <a href="https://wa.me/5215550751396" class="mx-2" target="_blank" rel="noopener noreferrer">
+                            <i class="bi bi-whatsapp"></i>
+                        </a>
+
+                        
+                    </div>
+                </div>
 
             </section>
 
-
-
-
+            <footer>
+                <div class="container">
+                    <div class="footerlogo">
+                        <div class="logo">
+                            <a href="#"><img src="multimedia/logo_hevca.png" alt="logo marca" width="180"></a>
+                        </div>
+                        <div class="redes">
+                            <ul>
+                                <li><a href="#">Blog</a></li>
+                                <li><a href="#">Afiliados</a></li>
+                                <li><a href="#">Términos y Condiciones</a></li>
+                                <li><a href="#">Política de Privacidad</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="colabs">
+                        <h5>Colaboradores</h5>
+                        <ul>
+                            <li><a href="#">Ana Gómez</a></li>
+                            <li><a href="#">Luis Martínez</a></li>
+                            <li><a href="#">Carla Ruiz</a></li>
+                            <li><a href="#">Javier López</a></li> 
+                    </div>
+                </div>
+                <div class="footer-content">
+                  <p>&copy; 2025 Hevca Photo & Art. Todos los derechos reservados. <a href="http://github.com/bichota-tech" style="color: #bc9536;" target="_blank">ACMA</a></p> 
+                </div>
+            </footer>
         </main>
         <script>
             fetch("icono_hamburguesa.html").then(res => res.text()).then(data => {
