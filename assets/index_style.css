@@ -29,10 +29,12 @@ header {
 div.menunav {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     column-gap: .5rem;
     margin-right: 3em;
+    margin-block: .5rem;
 }
 
 div.menunav a {
@@ -112,7 +114,7 @@ main {
     width: 100%;
 }
 
-div.carousel-inner,
+div.carousel-inner, div#mycarousel,
 img.d-block {
     height: 40rem;
     width: 100%;
@@ -135,7 +137,7 @@ img.d-block {
     margin-bottom: 1rem;
 }
 
-.carousel-caption a.button{top: 7rem;}
+.carousel-caption a.button{top: 5rem;}
 
 a.carousel-control-prev,
 a.carousel-control-next {
@@ -146,12 +148,10 @@ section {
     width: 100%;
     height: auto;
     text-align: center;
-    
 }
 
-h2.title {
-    margin-block: 2rem;
-}
+h2.title {margin-block: 2rem; cursor: default;}
+
 .card { /*cards de servicios y cards de galeria*/
     background-color: transparent;
     border-color: transparent;
@@ -182,7 +182,10 @@ div.sesiones .card-body {
     text-align: center;
     font-weight: 300;
     font-size: medium;
+    cursor: default;
 }
+
+h5{cursor: default;}
 
 a.btn.btn-primary {
     border-radius: 0;
@@ -226,6 +229,7 @@ div.col-md-3 {
     height: auto;
     border-radius: 5px;
     padding: 0;
+    margin-bottom: .5rem;
 }
 
 div.col-md-3:hover {
@@ -279,20 +283,22 @@ img.d-block.mx-auto.rounded-square {
 div.description {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     justify-content: center;
     margin-block: 4rem;
     margin-inline: 2rem;
-    column-gap: 3rem;
 }
 
 div.bio{
     display: flex;
     flex-direction: column;
-    align-items: start;
+    align-items: center;
+    margin-top: 1rem;
+    cursor: default;
 }
 
 div.bio a.button{
-    top: 4rem;
+    top: 3rem;
     margin-top: 2rem;
     margin-left: 0;
 }
@@ -300,13 +306,16 @@ div.bio a.button{
 h5.name{
     font-size: x-large;
     font-weight: 600 !important;
+    text-align: center !important;
+    cursor: default;
 }
 
 div.description h5 {
-    text-align: left;
+    text-align: center;
     align-self: center;
     width: 25rem;
     font-weight: 300;
+    cursor: default;
 }
 
 div.description img {
@@ -328,7 +337,8 @@ section.contacto {
     padding-top: 0 !important;
 }
 
-section.contacto h2 {color: rgba(0, 0, 0, 0.734);}
+section.contacto h2 {color: rgba(0, 0, 0, 0.734);cursor: default;}
+section.contacto h4{color: white; cursor: default;}
 
 div.row.justify-content-center{
     display: flex;
@@ -340,8 +350,11 @@ div.row.justify-content-center{
 }
 
 .contact-card {
-    background: rgba(0, 0, 0, 0.378);
-    border: 1px #bc9536 solid;
+    background: rgba(255, 255, 255, 0.1);
+    color:rgba(0, 0, 0, 0.722);
+    backdrop-filter: blur(5px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    border: 3px #bc9536 solid;
     border-radius: 20px;
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
     padding: 2rem;
@@ -356,9 +369,10 @@ div.row.justify-content-center{
     padding-left: 2.5rem;
 }
 
-.form-control:focus {
-    border-color: #bc9536;
-    box-shadow: 0 0 0 0.2rem #e09925;
+
+textarea.form-control{
+    resize: none;
+    overflow-y: scroll;
 }
 
 .input-icon {
@@ -367,6 +381,10 @@ div.row.justify-content-center{
     left: 1rem;
     transform: translateY(-50%);
     color: #6c757d;
+}
+
+.bi-pencil-square.input-icon{
+    top: 14%;
 }
 
 .btn-custom {
@@ -396,7 +414,7 @@ div.socialmedia {
 
 a.mx-2 {
     text-decoration: none;
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     color: white;
     background: transparent; /* Fondo circular */
     border-radius: 50%;

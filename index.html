@@ -18,12 +18,12 @@
         <header>
             <div class="logo"><img src="multimedia/logo_hevca.png" alt="logo marca"></div>
             <div class="menunav">
-                <a href="#">INICIO</a>
-                <a href="#">SERVICIOS</a>
-                <a href="#">PORTAFOLIO</a>
-                <a href="#">CLIENTES</a>
-                <a href="#">SOBRE MÍ</a>
-                <a href="#">CONTACTO</a>
+                <a href="#mycarousel">INICIO</a>
+                <a href="#servicios">SERVICIOS</a>
+                <a href="#galeria">GALERÍA</a>
+                <a href="#clientes">CLIENTES</a>
+                <a href="#aboutme">SOBRE MÍ</a>
+                <a href="#contacto">CONTACTO</a>
                 <a href="#" class="button">AGENDA TU SESIÓN</a>
             </div>
             <div id="menu"></div>
@@ -35,7 +35,7 @@
                         <img class="d-block w-100" src="multimedia/milky-way-2695569_1920.jpg" alt="First slide">
                         <div class="carousel-caption">
                             <h1>Fotografía Profesional</h1>
-                            <h4>"Mirada experta, fotos con alma"</h4>
+                            <h4>Mirada experta, fotos con alma.</h4>
                             <a href="#" class="button">SOLICITA PRESUPUESTO</a>
                         </div>
                     </div>
@@ -43,7 +43,7 @@
                         <img class="d-block w-100" src="multimedia/mushroom-8313142_640.jpg" alt="Second slide">
                         <div class="carousel-caption">
                             <h1>Fotografía Profesional</h1>
-                            <h4>"Mirada experta, fotos con alma"</h4>
+                            <h4>La diferencia está en cómo inmortalizas tu momento.</h4>
                             <a href="#" class="button">SOLICITA PRESUPUESTO</a>
                         </div>
                     </div>
@@ -51,7 +51,7 @@
                         <img class="d-block w-100" src="multimedia/mushrooms-3647871_640.jpg" alt="Third slide">
                         <div class="carousel-caption">
                             <h1>Fotografía Profesional</h1>
-                            <h4>"Mirada experta, fotos con alma"</h4>
+                            <h4>De lo cotidiano a lo inolvidable, a través del lente.</h4>
                             <a href="#" class="button">SOLICITA PRESUPUESTO</a>
                         </div>
                     </div>
@@ -66,7 +66,7 @@
                 </a>
             </div>
 
-            <section class="servicios">
+            <section class="servicios" id="servicios">
                 <h2 class="title">Servicios Profesionales</h2>
                 <h5 class="description">Servicios de fotografía adaptados a empresas, profesionales y proyectos
                     personales.</h5>
@@ -106,7 +106,7 @@
                 </div>
             </section>
 
-            <section class="portafolio">
+            <section class="portafolio" id="galeria">
                 <h2 class="title">Visita a la Galería</h2>
                 <div class="mb-4 text-center">
                     <button class="btn btn-outline-dark mx-1" data-filter=".corporativo">Corporativos</button>
@@ -160,7 +160,7 @@
                 <a href="#" class="button">GALERÍA DE SESIONES</a>
             </section>
 
-            <section class="testimonios">
+            <section class="testimonios" id="clientes">
                 <h2 class="title">Confían en nosotros</h2>
                 <!-- Carrusel de clientes -->
                 <div id="carouselClientes" class="carousel slide" data-bs-ride="carousel">
@@ -214,7 +214,7 @@
                 </div>
             </section>
 
-            <section class="aboutme">
+            <section class="aboutme" id="aboutme">
                 <h2 class="title">Detrás del lente</h2>
                 <div class="description">
                     <img src="multimedia/woman640.png" alt="fotoperfil">
@@ -231,13 +231,14 @@
                 </div>
             </section>
 
-            <section class="contacto">
+            <section class="contacto" id="contacto">
                 <h2 class="title">Hablemos de tí</h2>
+                <h4>Porque el primer paso para tu sesión perfecta comienza aquí.</h4>
                 <div class="container py-5">
                     <div class="row justify-content-center">
                         <div class="col-md-8 col-lg-6">
                             <div class="contact-card">
-                                <h4 class="text-center mb-4">Contáctame</h4>
+                                <h5 class="text-center mb-4">Rellena el formulario y empecemos a planear tu sesión.</h5>
                                 <form id="contactForm" novalidate>
 
                                     <!-- Nombre -->
@@ -269,7 +270,7 @@
                                     <div class="mb-3 position-relative">
                                         <i class="bi bi-pencil-square input-icon"></i>
                                         <textarea class="form-control" id="mensaje" rows="5"
-                                            placeholder="Escribe tu mensaje..." required></textarea>
+                                            placeholder="Escribe tu mensaje..."></textarea>
                                         <div class="invalid-feedback">El mensaje no puede estar vacío.</div>
                                     </div>
 
