@@ -44,10 +44,11 @@ img.item {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    transition: transform 200ms;
     width: clamp(.9rem, 2vw, 1.2rem);
     height: 3px;
     background: bisque;
-    transition: transform 200ms;
+    
 }
 
 .hamburger-1 {

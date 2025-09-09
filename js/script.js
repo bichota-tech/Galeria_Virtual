@@ -50,20 +50,13 @@ buttons.forEach(btn => {
   btn.addEventListener('click', () => {
     const filter = btn.getAttribute('data-filter');
 
-    if (filter === 'all') {
-      // Resetear
-      activeFilters = [];
-      mixer.filter('all');
-      buttons.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      return;
-    }
-
     // Activar/desactivar filtros
     if (activeFilters.includes(filter)) {
       activeFilters = activeFilters.filter(f => f !== filter);
       btn.classList.remove('active');
     } else {
+      activeFilters = []; // Permitir solo un filtro activo a la vez
+      buttons.forEach(b => b.classList.remove('active'));
       activeFilters.push(filter);
       btn.classList.add('active');
     }
@@ -84,7 +77,6 @@ var mixer = mixitup('.container-filtros', {
     easing: 'ease-in-out'        // suavidad
   }
 });
-
 
 // 👉 Mostrar inicialmente solo 1 sesión por categoría
 mixer.filter('.inicial');

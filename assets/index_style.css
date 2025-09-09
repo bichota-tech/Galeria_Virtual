@@ -32,7 +32,7 @@ div.menunav {
     justify-content: center;
     align-items: center;
     column-gap: .5rem;
-    margin-right: 1rem;
+    margin-right: 3em;
 }
 
 div.menunav a {
@@ -49,10 +49,10 @@ div.menunav a:hover {
 
 a.button {
     color: white;
-    background: transparent;
+    background: #bc9536;
     border-width: 2px;
     border-style: solid;
-    border-color: white;
+    border-color: #bc9536;
     position: relative;
     display: inline-block;
     padding: 0.5em .7em;
@@ -60,6 +60,7 @@ a.button {
     text-align: center;
     text-decoration: none;
     font-weight: 600;
+    margin-left: 2.5rem;
 }
 
 a.button::before,
@@ -92,7 +93,7 @@ a.button:hover:before,
 a.button:hover:after {
     width: calc(100% + 12px);
     height: calc(100% + 12px);
-    border-color: #bc9536
+    border-color: white
 }
 
 a.button:hover {
@@ -111,10 +112,6 @@ main {
     width: 100%;
 }
 
-h2.title {
-    margin-top: 1rem;
-}
-
 div.carousel-inner,
 img.d-block {
     height: 40rem;
@@ -126,7 +123,7 @@ img.d-block {
 .carousel-caption {
     position: absolute;
     right: 15%;
-    top: 2rem;
+    top: 3rem;
     left: 15%;
     padding-top: 1.25rem;
     padding-bottom: 1.25rem;
@@ -134,16 +131,33 @@ img.d-block {
     text-align: center;
 }
 
+.carousel-caption h1, .carousel-caption h4{
+    margin-bottom: 1rem;
+}
+
+.carousel-caption a.button{top: 7rem;}
+
 a.carousel-control-prev,
 a.carousel-control-next {
-    background: black;
+    background: rgba(14, 14, 14, 0.949);
 }
 
 section {
     width: 100%;
     height: auto;
     text-align: center;
-    margin-top: 1.5rem;
+    
+}
+
+h2.title {
+    margin-block: 2rem;
+}
+.card { /*cards de servicios y cards de galeria*/
+    background-color: transparent;
+    border-color: transparent;
+    color: rgba(255, 255, 255, 0.851);
+    font-weight: 600;
+    font-size: large;
 }
 
 /*Servicios -+-+-+-+-*/
@@ -155,20 +169,19 @@ div.sesiones {
     flex-wrap: wrap;
     column-gap: 1rem;
     height: auto;
-    margin-top: 2rem;
+    margin-top: 3rem;
 }
 
-.card {
-    background-color: transparent;
-    border-color: transparent;
-    color: rgba(255, 255, 255, 0.851);
-    font-weight: 600;
-    font-size: large;
+div.sesiones .card{
+    width: 18rem;
+    height: 29rem;
+    margin-bottom: 2rem;
 }
 
-div.card.p-3 {
-    padding: .5rem !important;
-    text-align: center !important;
+div.sesiones .card-body {
+    text-align: center;
+    font-weight: 300;
+    font-size: medium;
 }
 
 a.btn.btn-primary {
@@ -176,6 +189,7 @@ a.btn.btn-primary {
     background-color: transparent;
     border-color: #bc9536;
     font-weight: 300;
+    margin-top: 1.5rem;
 }
 
 a.btn.btn-primary:hover {
@@ -183,13 +197,21 @@ a.btn.btn-primary:hover {
     border-color: none;
 }
 
-/*Proyectos -+-+-+-+-+-*/
+/*Galeria*/
+
+div.row.container-filtros{
+    margin-bottom: 2rem;
+}
 
 button.btn.btn-outline-dark.mx-1 {
     margin: .3rem;
     color: rgba(255, 255, 255, 0.851);
     padding: 3px 8px;
     border-radius: 0;
+}
+
+.portafolio a.button {
+    margin-bottom: 2rem;
 }
 
 div.row {
@@ -200,18 +222,15 @@ div.row {
 }
 
 div.col-md-3 {
-    width: 11rem;
-    height: 12rem;
+    width: 18rem;
+    height: auto;
     border-radius: 5px;
-    padding: .8rem;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    padding: 0;
 }
 
 div.col-md-3:hover {
-    transform: scale(1.05);
-    /* pequeño zoom al pasar el mouse */
-    box-shadow: 0 0 30px #bc9536;
-    /* sombra difusa hacia afuera */
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 10px #bc9536; /* sombra difusa hacia afuera */
 }
 
 /*Testimonios -+-+-+-+-*/
@@ -228,6 +247,7 @@ img.decoration {
     z-index: -1;
     width: 100%;
     height: auto;
+    opacity: 0.75;
 }
 
 div.cliente.text-center {
@@ -260,16 +280,33 @@ div.description {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    margin-top: 4rem;
+    margin-block: 4rem;
     margin-inline: 2rem;
-    margin-bottom: 1rem;
     column-gap: 3rem;
+}
+
+div.bio{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+
+div.bio a.button{
+    top: 4rem;
+    margin-top: 2rem;
+    margin-left: 0;
+}
+
+h5.name{
+    font-size: x-large;
+    font-weight: 600 !important;
 }
 
 div.description h5 {
     text-align: left;
     align-self: center;
     width: 25rem;
+    font-weight: 300;
 }
 
 div.description img {
@@ -282,10 +319,13 @@ div.description img {
 section.contacto {
     background-image: url('../multimedia/contact_background.png') !important;
     background-position: center !important;
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
 }
 
 .container.py-5{
     display: flex;
+    padding-top: 0 !important;
 }
 
 section.contacto h2 {color: rgba(0, 0, 0, 0.734);}
