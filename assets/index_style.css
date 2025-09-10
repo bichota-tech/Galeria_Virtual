@@ -29,11 +29,11 @@ header {
 div.menunav {
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     justify-content: center;
     align-items: center;
     column-gap: .5rem;
-    margin-right: 3em;
+    margin-right: 1.7rem;
     margin-block: .5rem;
 }
 
@@ -62,7 +62,7 @@ a.button {
     text-align: center;
     text-decoration: none;
     font-weight: 600;
-    margin-left: 2.5rem;
+    margin-left: 1.5rem;
 }
 
 a.button::before,
@@ -104,7 +104,7 @@ a.button:hover {
     border-color: #bc9536;
 }
 
-div#menu {
+div#menu, div.home {
     display: none;
 }
 
@@ -114,7 +114,8 @@ main {
     width: 100%;
 }
 
-div.carousel-inner, div#mycarousel,
+div.carousel-inner,
+div#mycarousel,
 img.d-block {
     height: 40rem;
     width: 100%;
@@ -133,11 +134,14 @@ img.d-block {
     text-align: center;
 }
 
-.carousel-caption h1, .carousel-caption h4{
+.carousel-caption h1,
+.carousel-caption h4 {
     margin-bottom: 1rem;
 }
 
-.carousel-caption a.button{top: 5rem;}
+.carousel-caption a.button {
+    top: 5rem;
+}
 
 a.carousel-control-prev,
 a.carousel-control-next {
@@ -150,9 +154,13 @@ section {
     text-align: center;
 }
 
-h2.title {margin-block: 2rem; cursor: default;}
+h2.title {
+    margin-block: 2rem;
+    cursor: default;
+}
 
-.card { /*cards de servicios y cards de galeria*/
+.card {
+    /*cards de servicios y cards de galeria*/
     background-color: transparent;
     border-color: transparent;
     color: rgba(255, 255, 255, 0.851);
@@ -170,12 +178,13 @@ div.sesiones {
     column-gap: 1rem;
     height: auto;
     margin-top: 3rem;
+    margin-inline: 1rem;
 }
 
-div.sesiones .card{
+div.sesiones .card {
     width: 18rem;
     height: 29rem;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
 }
 
 div.sesiones .card-body {
@@ -185,7 +194,9 @@ div.sesiones .card-body {
     cursor: default;
 }
 
-h5{cursor: default;}
+h5 {
+    cursor: default;
+}
 
 a.btn.btn-primary {
     border-radius: 0;
@@ -202,8 +213,9 @@ a.btn.btn-primary:hover {
 
 /*Galeria*/
 
-div.row.container-filtros{
+div.row.container-filtros {
     margin-bottom: 2rem;
+    margin-inline: 1rem;
 }
 
 button.btn.btn-outline-dark.mx-1 {
@@ -221,7 +233,7 @@ div.row {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    column-gap: .5rem;
+    column-gap: .8rem;
 }
 
 div.col-md-3 {
@@ -234,7 +246,8 @@ div.col-md-3 {
 
 div.col-md-3:hover {
     background: rgba(255, 255, 255, 0.1);
-    box-shadow: 0 0 10px #bc9536; /* sombra difusa hacia afuera */
+    box-shadow: 0 0 10px #bc9536;
+    /* sombra difusa hacia afuera */
 }
 
 /*Testimonios -+-+-+-+-*/
@@ -243,9 +256,13 @@ section.testimonios {
     position: relative;
 }
 
+div#carouselClientes {
+    align-self: center;
+}
+
 img.decoration {
     position: absolute;
-    bottom: -230%;
+    bottom: -220%;
     left: 50%;
     transform: translateX(-50%);
     z-index: -1;
@@ -257,12 +274,13 @@ img.decoration {
 div.cliente.text-center {
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-content: center;
     margin: 2rem;
     column-gap: 1rem;
 }
 
 div.carousel-inner {
+
     width: 100%;
     height: auto;
 }
@@ -270,6 +288,7 @@ div.carousel-inner {
 div.subtitle.mt-3 {
     align-items: center;
     text-align: left;
+    width: 40%;
 }
 
 img.d-block.mx-auto.rounded-square {
@@ -289,7 +308,7 @@ div.description {
     margin-inline: 2rem;
 }
 
-div.bio{
+div.bio {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -297,13 +316,13 @@ div.bio{
     cursor: default;
 }
 
-div.bio a.button{
+div.bio a.button {
     top: 3rem;
     margin-top: 2rem;
     margin-left: 0;
 }
 
-h5.name{
+h5.name {
     font-size: x-large;
     font-weight: 600 !important;
     text-align: center !important;
@@ -332,15 +351,22 @@ section.contacto {
     background-size: cover !important;
 }
 
-.container.py-5{
+.container.py-5 {
     display: flex;
     padding-top: 0 !important;
 }
 
-section.contacto h2 {color: rgba(0, 0, 0, 0.734);cursor: default;}
-section.contacto h4{color: white; cursor: default;}
+section.contacto h2 {
+    color: rgba(0, 0, 0, 0.734);
+    cursor: default;
+}
 
-div.row.justify-content-center{
+section.contacto h4 {
+    color: rgba(0, 0, 0, 0.734);
+    cursor: default;
+}
+
+div.row.justify-content-center {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -351,7 +377,7 @@ div.row.justify-content-center{
 
 .contact-card {
     background: rgba(255, 255, 255, 0.1);
-    color:rgba(0, 0, 0, 0.722);
+    color: rgba(0, 0, 0, 0.722);
     backdrop-filter: blur(5px);
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
     border: 3px #bc9536 solid;
@@ -370,7 +396,7 @@ div.row.justify-content-center{
 }
 
 
-textarea.form-control{
+textarea.form-control {
     resize: none;
     overflow-y: scroll;
 }
@@ -383,7 +409,7 @@ textarea.form-control{
     color: #6c757d;
 }
 
-.bi-pencil-square.input-icon{
+.bi-pencil-square.input-icon {
     top: 14%;
 }
 
@@ -403,20 +429,26 @@ textarea.form-control{
 
 div.socialmedia {
     position: fixed;
-    top: 87%; /* Mitad vertical */
-    right: 20px; /* Separado del borde derecho */
+    top: 87%;
+    /* Mitad vertical */
+    right: 20px;
+    /* Separado del borde derecho */
     transform: translateY(-50%);
     display: flex;
-    flex-direction: column; /* Íconos uno debajo del otro */
-    gap: 15px; /* Espacio entre íconos */
-    z-index: 1000; /* Siempre encima */
+    flex-direction: column;
+    /* Íconos uno debajo del otro */
+    gap: 15px;
+    /* Espacio entre íconos */
+    z-index: 1000;
+    /* Siempre encima */
 }
 
 a.mx-2 {
     text-decoration: none;
     font-size: 1.8rem;
     color: white;
-    background: transparent; /* Fondo circular */
+    background: transparent;
+    /* Fondo circular */
     border-radius: 50%;
     padding: 1px 7px;
     transition: all 0.3s ease;
@@ -427,36 +459,84 @@ a.mx-2:hover {
     color: #bc9536;
 }
 
-div.container{
+div.container {
     width: 100%;
     height: auto;
     display: flex;
     justify-content: space-between;
 }
 
-.footerlogo{
+.footerlogo {
     display: flex;
     flex-direction: row;
     column-gap: 1rem;
     margin-top: 1rem;
 }
 
-div.colabs{
+div.colabs {
     margin-top: .8rem;
     margin-right: 5rem;
 }
 
-div.footer-content{
+div.footer-content {
     text-align: center;
     font-size: smaller;
 }
 
-ul{
+ul {
     list-style: none;
 }
 
-a{
+a {
     text-decoration: none;
     color: white;
     cursor: pointer;
+}
+
+@media (max-width:1024px) {
+
+    section.aboutme {
+        background-image: url("../multimedia/deco.png");
+        background-size: contain;
+        opacity: 0.75;
+    }
+
+    img.decoration {
+        bottom: -30% !important;
+    }
+}
+
+@media (max-width:768px) {
+    h5 {
+        margin-inline: 2rem;
+    }
+}
+
+@media (max-width:440px) {
+
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 5rem;
+    }
+
+    div.menunav{display: none;}
+    div#menu{display: flex;}
+
+    div.carousel.slide{display: none;}
+
+    div.home{
+        display: block;
+        background-image: url("../multimedia/mushroom-8313142_640.jpg");
+        height: 20rem;
+    }
+
+    div.welcome{
+        z-index: 5;
+    }
+
 }
