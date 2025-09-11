@@ -22,7 +22,7 @@ header {
 }
 
 .logo img {
-    margin-left: 1rem;
+    margin-left: .5rem;
     width: clamp(7rem, 12vw, 11rem);
 }
 
@@ -104,7 +104,9 @@ a.button:hover {
     border-color: #bc9536;
 }
 
-div#menu, div.home {
+div#menu,
+div.home,
+div.logoclientes {
     display: none;
 }
 
@@ -157,6 +159,18 @@ section {
 h2.title {
     margin-block: 2rem;
     cursor: default;
+    position: relative;
+    margin-bottom: 2rem;
+
+}
+
+h2.title::after {
+    content: "";
+    display: block;
+    width: 130px;
+    height: 2px;
+    background-color: #bc9536;
+    margin: .5rem auto 0;
 }
 
 .card {
@@ -183,19 +197,20 @@ div.sesiones {
 
 div.sesiones .card {
     width: 18rem;
-    height: 29rem;
+    height: auto;
     margin-bottom: 1rem;
 }
 
-div.sesiones .card-body {
+div.sesiones .card-body{
     text-align: center;
     font-weight: 300;
     font-size: medium;
     cursor: default;
 }
 
-h5 {
-    cursor: default;
+h5, p {
+    cursor: default !important;
+    margin: 0;
 }
 
 a.btn.btn-primary {
@@ -254,10 +269,9 @@ div.col-md-3:hover {
 
 section.testimonios {
     position: relative;
-}
-
-div#carouselClientes {
-    align-self: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 img.decoration {
@@ -277,23 +291,29 @@ div.cliente.text-center {
     align-content: center;
     margin: 2rem;
     column-gap: 1rem;
+    height: auto !important;
 }
 
-div.carousel-inner {
-
+div.carousel-inner, div.carousel-item {
     width: 100%;
-    height: auto;
+    height: auto !important;
 }
 
 div.subtitle.mt-3 {
-    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     text-align: left;
-    width: 40%;
+    width: 100%;
+    height: auto !important;
+    margin: 0 !important;
 }
+
+div.subtitle.mt-3 h5.title{margin: 0 !important;}
 
 img.d-block.mx-auto.rounded-square {
     width: 10rem;
-    height: auto;
+    height: auto !important;
     margin: 0 !important;
 }
 
@@ -317,7 +337,6 @@ div.bio {
 }
 
 div.bio a.button {
-    top: 3rem;
     margin-top: 2rem;
     margin-left: 0;
 }
@@ -353,6 +372,7 @@ section.contacto {
 
 .container.py-5 {
     display: flex;
+    justify-content: center;
     padding-top: 0 !important;
 }
 
@@ -431,7 +451,7 @@ div.socialmedia {
     position: fixed;
     top: 87%;
     /* Mitad vertical */
-    right: 20px;
+    right: 10px;
     /* Separado del borde derecho */
     transform: translateY(-50%);
     display: flex;
@@ -459,23 +479,27 @@ a.mx-2:hover {
     color: #bc9536;
 }
 
-div.container {
+/*-+-++-+-+-++-+-+-+-+-*/
+
+div.containerfooter {
     width: 100%;
     height: auto;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
+    align-items: center ;
 }
 
 .footerlogo {
     display: flex;
     flex-direction: row;
     column-gap: 1rem;
-    margin-top: 1rem;
+    
 }
 
 div.colabs {
     margin-top: .8rem;
     margin-right: 5rem;
+    text-align: right;
 }
 
 div.footer-content {
@@ -483,8 +507,11 @@ div.footer-content {
     font-size: smaller;
 }
 
+#imgfooter{margin: 0;}
+
 ul {
     list-style: none;
+    margin-top: .5rem;
 }
 
 a {
@@ -496,9 +523,9 @@ a {
 @media (max-width:1024px) {
 
     section.aboutme {
-        background-image: url("../multimedia/deco.png");
+        background-image: linear-gradient(rgba(14, 14, 14, 0.082),
+                rgba(14, 14, 14, 0.082)), url("../multimedia/deco.png");
         background-size: contain;
-        opacity: 0.75;
     }
 
     img.decoration {
@@ -507,7 +534,7 @@ a {
 }
 
 @media (max-width:768px) {
-    h5 {
+    h5.descrip {
         margin-inline: 2rem;
     }
 }
@@ -524,19 +551,80 @@ a {
         height: 5rem;
     }
 
-    div.menunav{display: none;}
-    div#menu{display: flex;}
+    div.menunav {display: none;}
 
-    div.carousel.slide{display: none;}
+    div#menu {display: flex;}
 
-    div.home{
+    .logo img{margin: 0;}
+
+    div#mycarousel {display: none;}
+
+    div.home {
         display: block;
         background-image: url("../multimedia/mushroom-8313142_640.jpg");
         height: 20rem;
     }
 
-    div.welcome{
-        z-index: 5;
+    div.home {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        row-gap: .5rem;
     }
+
+    div.home a {margin-top: 2rem;}
+
+    p.card-text {display: none;}
+
+    div.card {width: 11.85rem !important;}
+
+    a.btn.btn-primary {margin-top: 0;}
+
+    h5.card-text {
+        position: absolute;
+        top: 20%;
+    }
+
+    section.portafolio h2.title {margin-top: 1rem;}
+
+    div.col-md-3 {width: 11.85rem;}
+    
+    section.testimonios h2.title {margin-top: 1rem;}
+
+    div.cliente.text-center {
+        display: flex;
+        justify-content: left;
+        align-items: center;
+        margin: 0;
+        margin-inline:1rem;
+        column-gap: 1rem;
+        height: auto !important;
+    }
+
+    div.carousel-inner, div#carouselClientes, img.d-block{
+        width: 100%;
+        height: auto !important;
+        background-color: rgba(14, 14, 14, 0.616);
+    }
+
+    div.carousel-item img.d-block.mx-auto.rounded-square{
+        width: 100px;
+        height: 90px !important;
+    }
+
+    div.bio {
+        width: 100%;
+        background-color: rgba(14, 14, 14, 0.616);
+        padding-block: .8rem;
+    }
+
+    .footerlogo {
+    display: flex;
+    flex-direction: column;
+    }
+
+    ul{margin-top: 0;}
 
 }

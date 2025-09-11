@@ -7,7 +7,7 @@
 .menu {
     position: absolute;
     top: 1rem;
-    right: 2rem;
+    right: 1rem;
     display: flex;
     flex-direction: row-reverse; /* abre de der a izq */
     align-items: center;
@@ -16,17 +16,19 @@
 /* Botón principal */
 .menu-item,
 .menu-open-button {
-    background: black;
+    background:#bc9536;
     border-radius: 50%;
     width: 3rem;
     height: 3rem;
-    color: bisque;
+    color: white;
     text-align: center;
     line-height: 3rem;
     cursor: pointer;
     transition: transform 200ms ease-out;
     position: relative;
 }
+
+.menu-item{background-color: black;}
 
 img.item {
     vertical-align: middle;
@@ -42,7 +44,7 @@ img.item {
     transition: transform 200ms;
     width: clamp(.9rem, 2vw, 1.2rem);
     height: 3px;
-    background: bisque;
+    background: white;
     
 }
 
@@ -87,7 +89,7 @@ img.item {
 }
 
 .menu-item:hover {
-    background: goldenrod;
+    background: #bc9536;
 }
 
 .menu-open-button:hover {

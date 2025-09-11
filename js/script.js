@@ -9,6 +9,13 @@ document.addEventListener("DOMContentLoaded", () => {
       pause: "hover", //se detiene al pasar el mouse
       wrap: true // vuelve al inicio tras el ultimo slide
     });
+    
+    //inicializar carrusel de clientes
+  const clientesCarousel = document.querySelector('#carouselClientes');
+  const carousel1 = new bootstrap.Carousel(clientesCarousel, {
+    interval: 4000, // 5 segundos
+    ride: 'carousel'
+  });
 
   //Botones
 
@@ -25,12 +32,7 @@ document.addEventListener("DOMContentLoaded", () => {
     carousel.next();
   });
 
-  //inicializar carrusel de clientes
-  const clientesCarousel = document.querySelector('#carouselClientes');
-  const carousel1 = new bootstrap.Carousel(clientesCarousel, {
-    interval: 5000, // 5 segundos
-    ride: 'carousel'
-  });
+  
 
 })
 
