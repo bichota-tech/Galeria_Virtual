@@ -154,6 +154,7 @@ section {
     width: 100%;
     height: auto;
     text-align: center;
+;
 }
 
 h2.title {
@@ -267,11 +268,14 @@ div.col-md-3:hover {
 
 /*Testimonios -+-+-+-+-*/
 
-section.testimonios {
+section#clientes.testimonios {
     position: relative;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: center !important;
+    align-items: center;
+    width: 80%;
+    right: -10%;
 }
 
 img.decoration {
@@ -285,10 +289,10 @@ img.decoration {
     opacity: 0.75;
 }
 
-div.cliente.text-center {
+div.cliente.text-center{
     display: flex;
-    justify-content: center;
-    align-content: center;
+    justify-content: center !important;
+    align-items: center;
     margin: 2rem;
     column-gap: 1rem;
     height: auto !important;
@@ -297,6 +301,7 @@ div.cliente.text-center {
 div.carousel-inner, div.carousel-item {
     width: 100%;
     height: auto !important;
+
 }
 
 div.subtitle.mt-3 {
