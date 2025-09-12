@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
   const mycarousel = document.querySelector("#mycarousel");
-
+  const clientesCarousel = document.querySelector('#carouselClientes');
+  
   //inicializar carrusel de inicio
   const carousel = new
     bootstrap.Carousel(mycarousel, {
@@ -11,14 +12,12 @@ document.addEventListener("DOMContentLoaded", () => {
     });
     
     //inicializar carrusel de clientes
-  const clientesCarousel = document.querySelector('#carouselClientes');
   const carousel1 = new bootstrap.Carousel(clientesCarousel, {
     interval: 4000, // 5 segundos
     ride: 'carousel'
   });
 
   //Botones
-
   const prevBtn = document.getElementById("prevBtn");
   const nextBtn = document.getElementById("nextBtn");
 
@@ -31,9 +30,6 @@ document.addEventListener("DOMContentLoaded", () => {
     e.preventDefault();
     carousel.next();
   });
-
-  
-
 })
 
 // Inicializar MixItUp en el contenedor

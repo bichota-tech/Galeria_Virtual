@@ -21,6 +21,12 @@ header {
     height: auto;
 }
 
+main {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
 .logo img {
     margin-left: .5rem;
     width: clamp(7rem, 12vw, 11rem);
@@ -45,9 +51,11 @@ div.menunav a {
     padding: .3rem;
 }
 
-div.menunav a:hover {
-    background: #bc9536
-}
+div.menunav a:hover {background: #bc9536}
+
+div#menu, div.home, div.logoclientes {display: none;}
+
+/*GENERALES-+--++-+ */
 
 a.button {
     color: white;
@@ -104,28 +112,43 @@ a.button:hover {
     border-color: #bc9536;
 }
 
-div#menu,
-div.home,
-div.logoclientes {
-    display: none;
-}
-
-main {
-    display: flex;
-    flex-direction: column;
+section {
     width: 100%;
+    height: auto;
+    text-align: center;
 }
 
-div.carousel-inner,
+h2.title {
+    margin-block: 2rem;
+    cursor: default;
+    position: relative;
+    margin-bottom: 2rem;
+}
+
+h2.title::after {
+    content: "";
+    display: block;
+    width: 130px;
+    height: 2px;
+    background-color: #bc9536;
+    margin: .5rem auto 0;
+}
+
+h5, p {
+    cursor: default !important;
+    margin: 0;
+}
+
+/*CARRUSEL INICIO - TESTIMONIO*/
+div#mycarousel.carousel-inner,
 div#mycarousel,
-img.d-block {
+div#mycarousel img.d-block {
     height: 40rem;
     width: 100%;
     cursor: no-drop;
 }
-
-/*Texto en el 1er slide*/
-.carousel-caption {
+/*Inicio*/
+.carousel-caption { /*Texto en los slide*/
     position: absolute;
     right: 15%;
     top: 3rem;
@@ -149,41 +172,29 @@ a.carousel-control-prev,
 a.carousel-control-next {
     background: rgba(14, 14, 14, 0.949);
 }
+/*testimonio*/
 
-section {
-    width: 100%;
-    height: auto;
-    text-align: center;
-;
+div.cliente.text-center{
+    width: auto;
 }
 
-h2.title {
-    margin-block: 2rem;
-    cursor: default;
-    position: relative;
-    margin-bottom: 2rem;
-
+img.d-block.mx-auto.rounded-square{
+    border-radius: 50%;
+    height: 130px;
 }
 
-h2.title::after {
-    content: "";
-    display: block;
-    width: 130px;
-    height: 2px;
-    background-color: #bc9536;
-    margin: .5rem auto 0;
-}
+/*---------------------------------*/
 
-.card {
-    /*cards de servicios y cards de galeria*/
+
+/*SERVICIOS -+-+-+--+-+--++-+*/
+
+.card { /*cards de servicios y cards de galeria*/
     background-color: transparent;
     border-color: transparent;
     color: rgba(255, 255, 255, 0.851);
     font-weight: 600;
     font-size: large;
 }
-
-/*Servicios -+-+-+-+-*/
 
 div.sesiones {
     display: flex;
@@ -207,11 +218,6 @@ div.sesiones .card-body{
     font-weight: 300;
     font-size: medium;
     cursor: default;
-}
-
-h5, p {
-    cursor: default !important;
-    margin: 0;
 }
 
 a.btn.btn-primary {
@@ -269,13 +275,13 @@ div.col-md-3:hover {
 /*Testimonios -+-+-+-+-*/
 
 section#clientes.testimonios {
-    position: relative;
     display: flex;
     flex-direction: column;
-    justify-content: center !important;
+    justify-content: center;
     align-items: center;
-    width: 80%;
-    right: -10%;
+    position: relative;
+    width: 100%;
+    margin-bottom: 1.5rem;
 }
 
 img.decoration {
@@ -287,39 +293,6 @@ img.decoration {
     width: 100%;
     height: auto;
     opacity: 0.75;
-}
-
-div.cliente.text-center{
-    display: flex;
-    justify-content: center !important;
-    align-items: center;
-    margin: 2rem;
-    column-gap: 1rem;
-    height: auto !important;
-}
-
-div.carousel-inner, div.carousel-item {
-    width: 100%;
-    height: auto !important;
-
-}
-
-div.subtitle.mt-3 {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: left;
-    width: 100%;
-    height: auto !important;
-    margin: 0 !important;
-}
-
-div.subtitle.mt-3 h5.title{margin: 0 !important;}
-
-img.d-block.mx-auto.rounded-square {
-    width: 10rem;
-    height: auto !important;
-    margin: 0 !important;
 }
 
 /*Sobre mi -+-+-+-+-*/
@@ -454,18 +427,13 @@ textarea.form-control {
 
 div.socialmedia {
     position: fixed;
-    top: 87%;
-    /* Mitad vertical */
-    right: 10px;
-    /* Separado del borde derecho */
+    top: 87%; /* Mitad vertical */
+    right: 10px; /* Separado del borde derecho */
     transform: translateY(-50%);
     display: flex;
-    flex-direction: column;
-    /* Íconos uno debajo del otro */
-    gap: 15px;
-    /* Espacio entre íconos */
-    z-index: 1000;
-    /* Siempre encima */
+    flex-direction: column; /* Íconos uno debajo del otro */
+    gap: 15px; /* Espacio entre íconos */
+    z-index: 1000; /* Siempre encima */
 }
 
 a.mx-2 {
@@ -473,8 +441,7 @@ a.mx-2 {
     font-size: 1.8rem;
     color: white;
     background: transparent;
-    /* Fondo circular */
-    border-radius: 50%;
+    border-radius: 50%; 
     padding: 1px 7px;
     transition: all 0.3s ease;
 }
@@ -484,7 +451,7 @@ a.mx-2:hover {
     color: #bc9536;
 }
 
-/*-+-++-+-+-++-+-+-+-+-*/
+/*FOOTER -+-++-+-+-++-+-+-+-+-*/
 
 div.containerfooter {
     width: 100%;
@@ -497,8 +464,7 @@ div.containerfooter {
 .footerlogo {
     display: flex;
     flex-direction: row;
-    column-gap: 1rem;
-    
+    column-gap: 1rem;    
 }
 
 div.colabs {
@@ -606,6 +572,7 @@ a {
         margin-inline:1rem;
         column-gap: 1rem;
         height: auto !important;
+        margin-bottom: 1rem;
     }
 
     div.carousel-inner, div#carouselClientes, img.d-block{
