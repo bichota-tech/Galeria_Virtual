@@ -203,39 +203,39 @@ img.d-block.mx-auto.rounded-square {
 
 /*SERVICIOS -+-+-+--+-+--++-+*/
 
-div.card {
-    /*cards de servicios y cards de galeria*/
-    background-color: transparent;
-    border-color: transparent;
-    color: rgba(255, 255, 255, 0.851);
-    font-weight: 600;
-    font-size: large;
-    width: clamp(8.5rem ,25vw, 19rem) !important;
-    
-}
-
 div.sesiones {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
+    display: grid;
+    justify-items: center;
+    grid-template-columns: repeat(4, 1fr);
     column-gap: 1rem;
     height: auto;
     margin-top: 3rem;
     margin-inline: 1rem;
 }
 
-div.sesiones .card {
-    width: 18rem;
+div.card {
+    /*cards de servicios y cards de galeria*/
+    background-color: transparent;
+    border-color: transparent;
+    color: rgba(255, 255, 255, 0.851);
+    width: auto;
     height: auto;
     margin-bottom: 1rem;
 }
 
 div.sesiones .card-body {
     text-align: center;
-    font-weight: 300;
-    font-size: medium;
     cursor: default;
+}
+
+p.card-text {
+    font-weight: 300;
+    font-size: clamp(.7rem, 3vw + 0.5rem, 1.1rem);
+}
+
+h5.card-text {
+    font-size: clamp(1rem, 3vw + 0.5rem, 1.5rem);
+    font-weight: 600;
 }
 
 a.btn.btn-primary {
@@ -252,12 +252,6 @@ a.btn.btn-primary:hover {
 }
 
 /*Galeria*/
-
-div.row.container-filtros {
-    margin-bottom: 2rem;
-    margin-inline: 1rem;
-}
-
 button.btn.btn-outline-dark.mx-1 {
     margin: .3rem;
     color: rgba(255, 255, 255, 0.851);
@@ -265,19 +259,17 @@ button.btn.btn-outline-dark.mx-1 {
     border-radius: 0;
 }
 
-.portafolio a.button {
+div.row.container-filtros {
     margin-bottom: 2rem;
+    margin-inline: 1rem;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-items: center;
+    column-gap: 1rem;
 }
 
-div.row {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    column-gap: .8rem;
-}
-
-div.col-md-3 {
-    width: 18rem;
+div.col-md-3.mix {
+    width: auto;
     height: auto;
     border-radius: 5px;
     padding: 0;
@@ -288,6 +280,10 @@ div.col-md-3:hover {
     background: rgba(255, 255, 255, 0.1);
     box-shadow: 0 0 10px #bc9536;
     /* sombra difusa hacia afuera */
+}
+
+.portafolio a.button {
+    margin-bottom: 2rem;
 }
 
 /*Testimonios -+-+-+-+-*/
@@ -414,7 +410,6 @@ div.row.justify-content-center {
     padding-left: 2.5rem;
 }
 
-
 textarea.form-control {
     resize: none;
     overflow-y: scroll;
@@ -439,11 +434,13 @@ textarea.form-control {
     background: linear-gradient(135deg, #bc9536, #daa520);
     border: none;
     transition: all 0.3s ease-in-out;
+    color: rgba(0, 0, 0, 0.732);
 }
 
 .btn-custom:hover {
     background: linear-gradient(135deg, #daa520, #bc9536);
     transform: scale(1.02);
+    color: rgba(255, 255, 255, 0.811);
 }
 
 div.socialmedia {
@@ -522,20 +519,41 @@ a {
 @media (max-width:1024px) {
 
     section.aboutme {
-        background-image: linear-gradient(rgba(14, 14, 14, 0.082),
-                rgba(14, 14, 14, 0.082)), url("../multimedia/deco.png");
+        background-image: linear-gradient(rgba(14, 14, 14, 0.0859),
+                rgba(14, 14, 14, 0.0859)), url("../multimedia/deco.png");
         background-size: contain;
     }
 
     img.decoration {
         bottom: -30% !important;
     }
+
 }
 
-@media (max-width:768px) {
+@media (max-width:840px) {
     h5.descrip {
         margin-inline: 2rem;
     }
+
+    div.sesiones {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        justify-items: center;
+    }
+
+    div.card{
+        width: auto;
+    }
+
+    div.row.container-filtros {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
+    column-gap: 1rem;
+    }
+
+    div.col-md-3.mix{width: auto;}
+
 }
 
 @media (max-width:440px) {
@@ -592,6 +610,25 @@ a {
     a.btn.btn-primary {
         margin-top: 0;
     }
+
+    div.sesiones {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        justify-items: center;
+    }
+
+    div.card{
+        width: auto;
+    }
+
+    div.row.container-filtros {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
+    column-gap: 1rem;
+    }
+
+    div.col-md-3.mix{width: auto;}
 
     h5.card-text {
         position: absolute;
