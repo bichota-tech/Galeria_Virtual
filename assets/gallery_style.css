@@ -7,18 +7,22 @@
 body {
     background-color: rgba(14, 14, 14, 0.949);
     color: rgba(255, 255, 255, 0.851);
+    font-family: "Poppins", sans-serif;
     width: 100%;
-    height: auto;
+    
 }
 
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    background-color: rgba(14, 14, 14, 0.949);
     top: 0;
     left: 0;
     width: 100%;
-    height: auto;
+    height: 5.5rem;
+    position: fixed;
+    z-index: 1000;
 }
 
 .logo img {
@@ -104,33 +108,58 @@ a.button:hover {
     border-color: #bc9536;
 }
 
+main{
+    padding-top: 7rem;
+}
+
+h1{
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+h1::after{
+    content: "";
+    display: block;
+    width: 250px;
+    height: 2px;
+    background-color: #bc9536;
+    margin: .5rem auto 0;
+}
+
 div.decorativo{
-    position: absolute;
+    position: fixed;
     background-color: #bc9536 ;
-    height: 15rem;
+    height: 5rem;
     width:100%;
-    top: 40%;
+    top: 66%;
     bottom:50%;
     z-index: -1000;    
 }
 
-div.sesiones{
-    display:grid;
-    grid-template-columns: repeat(3, 1fr);
-    row-gap: 1rem;
-    column-gap:1rem ;
-    width: 80%;
-    position: absolute;
-    top: 20%;
-    left: 12%;
+div.mb-4.text-center{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    
 }
 
-div.card{
-    max-width: 23rem; 
+button.btn.btn-outline-dark.mx-1{
+    border-radius: 0;
+    margin: .3rem;
+    color: rgba(255, 255, 255, 0.851);;
 }
 
-a.card-title{
-    text-align: center;
-    text-decoration: none;
-    font-size: x-large;
+button.btn.btn-outline-dark.mx-1:hover{
+    background-color: #bc9536;
+}
+
+div.row.container-filtros{
+    margin-inline: 1rem;
+    justify-content: center;
+}
+
+div.col-md-3{
+    width: 18rem;
+    margin: .5rem;
+    padding: 0;
 }
