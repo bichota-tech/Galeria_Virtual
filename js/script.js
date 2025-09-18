@@ -79,6 +79,38 @@ var mixer = mixitup('.container-filtros', {
 // 👉 Mostrar inicialmente solo 1 sesión por categoría
 mixer.filter('.inicial');
 
+//Marcar enlace menunav al hacer click
+const navLinks = document.querySelectorAll(".nav-link");
+// Obtener info de la URL actual
+const currentPage = window.location.pathname.split("/").pop(); // index.html o gallery.html
+const currentHash = window.location.hash; // #servicios, #clientes o vacío
+
+navLinks.forEach(link => {
+  link.addEventListener("click", () => {
+    navLinks.forEach(l => l.classList.remove("active")); // quita el active de los demás
+    link.classList.add("active"); // marca el clicado
+  });
+});
+
+navLinks.forEach(link => {
+  // Analizar href del enlace
+  const tempLink = document.createElement("a");
+  tempLink.href = link.href;
+
+  const linkPage = tempLink.pathname.split("/").pop(); // nombre del HTML
+  const linkHash = tempLink.hash; // hash del enlace
+
+  // Si coincide página y hash
+  if (linkPage === currentPage && linkHash === currentHash) {
+    link.classList.add("active");
+  }
+  
+  // Si el enlace es solo la página sin hash
+  if (linkPage === currentPage && !linkHash && !currentHash) {
+    link.classList.add("active");
+  }
+});
+
 // Validación Bootstrap + feedback
     // (function () {
     //   'use strict'

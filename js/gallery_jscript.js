@@ -44,3 +44,5 @@ var mixer = mixitup('.container-filtros', {
 
 // 👉 Mostrar inicialmente solo 1 sesión por categoría
 mixer.filter('.inicial');
+
+

@@ -1,116 +1,3 @@
-* {
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
-}
-
-body {
-    background-color: rgba(14, 14, 14, 0.949);
-    color: rgba(255, 255, 255, 0.851);
-    font-family: "Poppins", sans-serif;
-    width: 100%;
-    
-}
-
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: rgba(14, 14, 14, 0.949);
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 5.5rem;
-    position: fixed;
-    z-index: 1000;
-}
-
-.logo img {
-    margin-left: .5rem;
-    width: clamp(7rem, 12vw, 11rem);
-}
-
-div.menunav {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: center;
-    align-items: center;
-    column-gap: .5rem;
-    margin-right: 1.7rem;
-    margin-block: .5rem;
-}
-
-div.menunav a {
-    color: white !important;
-    text-decoration: none !important;
-    text-decoration-line: none !important;
-    text-align: center !important;
-    padding: .3rem;
-}
-
-div.menunav a:hover {
-    background: #bc9536
-}
-
-a.button {
-    color: white;
-    background: #bc9536;
-    border-width: 2px;
-    border-style: solid;
-    border-color: #bc9536;
-    position: relative;
-    display: inline-block;
-    padding: 0.5em .7em;
-    transition: all 0.3s ease-in-out;
-    text-align: center;
-    text-decoration: none;
-    font-weight: 600;
-    margin-left: 1.5rem;
-}
-
-a.button::before,
-a.button::after {
-    content: '';
-    display: block;
-    position: absolute;
-    border-color: #bc9536;
-    box-sizing: border-box;
-    border-style: solid;
-    width: 1em;
-    height: 1em;
-    transition: all 0.3s ease-in-out
-}
-
-a.button::before {
-    top: -6px;
-    left: -6px;
-    border-width: 2px 0 0 2px;
-    z-index: 5;
-}
-
-a.button::after {
-    bottom: -6px;
-    right: -6px;
-    border-width: 0 2px 2px 0;
-}
-
-a.button:hover:before,
-a.button:hover:after {
-    width: calc(100% + 12px);
-    height: calc(100% + 12px);
-    border-color: white
-}
-
-a.button:hover {
-    color: white;
-    background-color: #bc9536;
-    border-color: #bc9536;
-}
-
-main{
-    padding-top: 7rem;
-}
 
 h1{
     text-align: center;
@@ -140,18 +27,24 @@ div.mb-4.text-center{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    
 }
 
 button.btn.btn-outline-dark.mx-1{
     border-radius: 0;
     margin: .3rem;
-    color: rgba(255, 255, 255, 0.851);;
+    color: rgba(255, 255, 255, 0.851);
 }
 
 button.btn.btn-outline-dark.mx-1:hover{
     background-color: #bc9536;
 }
+
+div.mb-4.text-center .mixitup-control-active {
+  background-color: #bc9536 !important;
+  font-weight: 600 !important;
+}
+
+
 
 div.row.container-filtros{
     margin-inline: 1rem;

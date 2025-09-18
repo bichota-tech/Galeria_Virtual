@@ -14,23 +14,23 @@
         </style>
         <script src="https://cdn.jsdelivr.net/npm/mixitup/dist/mixitup.min.js"></script>
         <link rel="stylesheet" href="assets/gallery_style.css">
-
+        <link rel="stylesheet" href="assets/index_style.css">
         <title>Galería HEVCA Photo&Art</title>
     </head>
 
     <body>
         <header>
-            <div class="logo">
-                <img src="multimedia/logo_hevca.png" alt="logo marca">
-            </div>
+            <div class="logo"><img src="multimedia/logo_hevca.png" alt="logo marca"></div>
             <div class="menunav">
-                <a href="index.html">INICIO</a>
-                <a href="#servicios">SERVICIOS</a>
-                <a href="#aboutme">SOBRE MÍ</a>
-                <a href="#contacto">CONTACTO</a>
+                <a href="index.html" class="nav-link">INICIO</a>
+                <a href="index.html#servicios" class="nav-link">SERVICIOS</a>
+                <a href="gallery.html" class="nav-link">GALERÍA</a>
+                <a href="index.html#aboutme" class="nav-link">SOBRE MÍ</a>
+                <a href="index.html#contacto" class="nav-link">CONTACTO</a>
                 <a href="#" class="button">AGENDA TU SESIÓN</a>
             </div>
-        </header>
+        <div id="menu"></div>
+    </header>
         <div class="decorativo"></div>
         <main>
             <section class="portafolio" id="galeria">
@@ -101,6 +101,7 @@
                 </div>
             </section>
         </main>
+        <script src="js/script.js"></script>
         <script src="js/gallery_jscript.js"></script>
     </body>
 

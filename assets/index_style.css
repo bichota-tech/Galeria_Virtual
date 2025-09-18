@@ -16,12 +16,16 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: rgba(14, 14, 14, 0.949);
+    background-color: rgb(14, 14, 14);
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    height: auto;
+    height: 5.5rem;
+    z-index: 1000;
 }
+
+.header-spacer {height: 5rem;}/* igual que header */
 
 main {
     display: flex;
@@ -45,7 +49,7 @@ div.menunav {
     margin-block: .5rem;
 }
 
-div.menunav a {
+a.nav-link {
     color: white !important;
     text-decoration: none !important;
     text-decoration-line: none !important;
@@ -53,8 +57,13 @@ div.menunav a {
     padding: .3rem;
 }
 
-div.menunav a:hover {
-    background: #bc9536
+a.nav-link:hover {
+    color: #bc9536 !important;
+}
+
+a.nav-link.active{
+    border-bottom: 2px solid #bc9536;
+    color: #bc9536 !important;
 }
 
 div#menu,
@@ -124,6 +133,7 @@ section {
     width: 100%;
     height: auto;
     text-align: center;
+    scroll-margin-top: 6rem;
 }
 
 h2.title {
@@ -297,7 +307,6 @@ section#clientes.testimonios {
     align-items: center;
     position: relative;
     width: 100%;
-    margin-bottom: 1.5rem;
 }
 
 img.decoration {
@@ -319,8 +328,7 @@ div.description {
     flex-wrap: nowrap;
     justify-content: center;
     align-items: center;
-    margin-block: 4rem;
-    margin-inline: 2rem;
+    margin-bottom: 4rem;
 }
 
 div.bio {
@@ -335,6 +343,10 @@ div.bio {
 div.bio a.button {
     margin-top: 2rem;
     margin-left: 0;
+}
+
+section.aboutme h2.title{
+    margin-top: 3rem !important;
 }
 
 h5.name {
