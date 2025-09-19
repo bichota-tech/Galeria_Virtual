@@ -25,7 +25,11 @@ header {
     z-index: 1000;
 }
 
-.header-spacer {height: 5rem;}/* igual que header */
+.header-spacer {
+    height: 5rem;
+}
+
+/* igual que header */
 
 main {
     display: flex;
@@ -61,7 +65,7 @@ a.nav-link:hover {
     color: #bc9536 !important;
 }
 
-a.nav-link.active{
+a.nav-link.active {
     border-bottom: 2px solid #bc9536;
     color: #bc9536 !important;
 }
@@ -167,7 +171,7 @@ p {
 div#mycarousel.carousel-inner,
 div#mycarousel,
 div#mycarousel img.d-block {
-    height: 40rem;
+    max-height: 50rem;
     width: 100%;
     cursor: no-drop;
 }
@@ -207,7 +211,8 @@ div.cliente.text-center {
 
 img.d-block.mx-auto.rounded-square {
     border-radius: 50%;
-    height: 130px;
+    max-height: 8.5rem;
+    max-width: 8rem;
 }
 
 /*---------------------------------*/
@@ -322,6 +327,13 @@ img.decoration {
 
 /*Sobre mi -+-+-+-+-*/
 
+section.aboutme{
+    background-image: url("../multimedia/profile.jpg");
+    background-position: top;
+    background-repeat:no-repeat;
+    background-size: cover;
+}
+
 div.description {
     display: flex;
     flex-direction: row;
@@ -329,6 +341,7 @@ div.description {
     justify-content: center;
     align-items: center;
     margin-bottom: 4rem;
+    
 }
 
 div.bio {
@@ -345,7 +358,7 @@ div.bio a.button {
     margin-left: 0;
 }
 
-section.aboutme h2.title{
+section.aboutme h2.title {
     margin-top: 3rem !important;
 }
 
@@ -532,12 +545,6 @@ a {
 
 @media (max-width:1024px) {
 
-    section.aboutme {
-        background-image: linear-gradient(rgba(14, 14, 14, 0.0859),
-                rgba(14, 14, 14, 0.0859)), url("../multimedia/deco.png");
-        background-size: contain;
-    }
-
     img.decoration {
         bottom: -30% !important;
     }
@@ -555,18 +562,20 @@ a {
         justify-items: center;
     }
 
-    div.card{
+    div.card {
         width: auto;
     }
 
     div.row.container-filtros {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    justify-items: center;
-    column-gap: 1rem;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        justify-items: center;
+        column-gap: 1rem;
     }
 
-    div.col-md-3.mix{width: auto;}
+    div.col-md-3.mix {
+        width: auto;
+    }
 
 }
 
@@ -599,18 +608,16 @@ a {
     }
 
     div.home {
-        display: block;
-        background-image: url("../multimedia/mushroom-8313142_640.jpg");
-        height: 20rem;
-    }
-
-    div.home {
         display: flex;
         flex-direction: column;
-        justify-content: center;
+        justify-content:center;
         align-items: center;
         text-align: center;
-        row-gap: .5rem;
+        background-image: url("../multimedia/home_movil.jpg");
+        background-position: top;
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 20rem;
     }
 
     div.home a {
@@ -631,18 +638,20 @@ a {
         justify-items: center;
     }
 
-    div.card{
+    div.card {
         width: auto;
     }
 
     div.row.container-filtros {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    justify-items: center;
-    column-gap: 1rem;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        justify-items: center;
+        column-gap: 1rem;
     }
 
-    div.col-md-3.mix{width: auto;}
+    div.col-md-3.mix {
+        width: auto;
+    }
 
     h5.card-text {
         position: absolute;

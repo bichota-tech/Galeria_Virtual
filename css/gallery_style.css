@@ -1,10 +1,9 @@
-
-h1{
+h1 {
     text-align: center;
     margin-bottom: 2rem;
 }
 
-h1::after{
+h1::after {
     content: "";
     display: block;
     width: 250px;
@@ -13,46 +12,50 @@ h1::after{
     margin: .5rem auto 0;
 }
 
-div.decorativo{
+div.decorativo {
     position: fixed;
-    background-color: #bc9536 ;
+    background-color: #bc9536;
     height: 5rem;
-    width:100%;
+    width: 100%;
     top: 66%;
-    bottom:50%;
-    z-index: -1000;    
+    bottom: 50%;
+    z-index: -1000;
 }
 
-div.mb-4.text-center{
+div.mb-4.text-center {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
 }
 
-button.btn.btn-outline-dark.mx-1{
+button.btn.btn-outline-dark.mx-1 {
     border-radius: 0;
     margin: .3rem;
     color: rgba(255, 255, 255, 0.851);
 }
 
-button.btn.btn-outline-dark.mx-1:hover{
+button.btn.btn-outline-dark.mx-1:hover {
     background-color: #bc9536;
 }
 
 div.mb-4.text-center .mixitup-control-active {
-  background-color: #bc9536 !important;
-  font-weight: 600 !important;
+    background-color: #bc9536 !important;
+    font-weight: 600 !important;
 }
 
-
-
-div.row.container-filtros{
-    margin-inline: 1rem;
-    justify-content: center;
+main {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+    padding: 1rem;
+    max-width: 1200px;
+    margin: auto;
 }
 
-div.col-md-3{
-    width: 18rem;
-    margin: .5rem;
-    padding: 0;
+picture,
+img {
+    width: 100%;
+    border-radius: 10px;
+    display: block;
+    object-fit: cover;
 }
