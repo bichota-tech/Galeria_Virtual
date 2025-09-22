@@ -1,5 +1,8 @@
+
+
 h1 {
     text-align: center;
+    margin-top: 6rem;
     margin-bottom: 2rem;
 }
 
@@ -12,12 +15,16 @@ h1::after {
     margin: .5rem auto 0;
 }
 
+section.portafolio{
+    
+}
+
 div.decorativo {
     position: fixed;
     background-color: #bc9536;
-    height: 5rem;
+    height: 10rem;
     width: 100%;
-    top: 66%;
+    top: 56%;
     bottom: 50%;
     z-index: -1000;
 }
@@ -34,28 +41,32 @@ button.btn.btn-outline-dark.mx-1 {
     color: rgba(255, 255, 255, 0.851);
 }
 
-button.btn.btn-outline-dark.mx-1:hover {
-    background-color: #bc9536;
-}
-
-div.mb-4.text-center .mixitup-control-active {
+.active {
     background-color: #bc9536 !important;
     font-weight: 600 !important;
 }
 
-main {
+#galeria {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 1rem;
     padding: 1rem;
-    max-width: 1200px;
+    width: 1200px;
     margin: auto;
+    
 }
 
 picture,
-img {
-    width: 100%;
+#galeria img
+ {
+    max-width: 25rem;
+    height: 18rem;
     border-radius: 10px;
     display: block;
     object-fit: cover;
+}
+
+div.logo img{
+    margin-left: .5rem !important;
+    width: clamp(7rem, 12vw, 11rem) !important;
 }

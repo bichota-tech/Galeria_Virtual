@@ -13,6 +13,8 @@
     align-items: center;
 }
 
+svg{display: none;}
+
 /* Botón principal */
 .menu-item,
 .menu-open-button {

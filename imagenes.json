@@ -1,0 +1,36 @@
+{
+  "corporativo": [
+    { "jpg": "multimedia/corporativo2.jpg", "alt": "Sesión Corporativa 2" },
+    { "jpg": "multimedia/corporativo1.jpg", "alt": "Sesión Corporativa 1" },
+    { "jpg": "multimedia/comercial1.jpg", "alt": "Sesión Comercial 1" },
+    { "jpg": "multimedia/comercial2.jpg", "alt": "Sesión Comercial 2" },
+    { "jpg": "multimedia/evento1.jpg", "alt": "Sesión de Eventos 1" },
+    { "jpg": "multimedia/evento2.jpg", "alt": "Sesión de Eventos 2" },
+     { "jpg": "multimedia/familiar1.jpg", "alt": "Sesión Familiar 1" },
+    { "jpg": "multimedia/familiar2.jpg", "alt": "Sesión Familiar 2" }
+  ],
+  "comercial": [
+    { "jpg": "multimedia/comercial1.jpg", "alt": "Sesión Comercial 1" },
+    { "jpg": "multimedia/comercial2.jpg", "alt": "Sesión Comercial 2" }
+  ],
+  "boudoirArt": [
+    { "jpg": "multimedia/artistico1.jpg", "alt": "Sesión Boudoir & Artístico 1" },
+    { "jpg": "multimedia/artistico2.jpg", "alt": "Sesión Boudoir & Artístico 2" }
+  ],
+  "evento": [
+    { "jpg": "multimedia/evento1.jpg", "alt": "Sesión de Eventos 1" },
+    { "jpg": "multimedia/evento2.jpg", "alt": "Sesión de Eventos 2" }
+  ],
+  "familiar": [
+    { "jpg": "multimedia/familiar1.jpg", "alt": "Sesión Familiar 1" },
+    { "jpg": "multimedia/familiar2.jpg", "alt": "Sesión Familiar 2" }
+  ],
+  "infantil": [
+    { "jpg": "multimedia/infantil1.jpg", "alt": "Sesión Infantil 1" },
+    { "jpg": "multimedia/infantil2.jpg", "alt": "Sesión Infantil 2" }
+  ],
+  "newborn": [
+    { "jpg": "multimedia/newborn1.jpg", "alt": "Sesión Newborn 1" },
+    { "jpg": "multimedia/newborn2.jpg", "alt": "Sesión Newborn 2" }
+  ]
+}
