@@ -1,11 +1,10 @@
 // js/gallery_jscript.js
 let data = {};
-let displayedImages = []; // array actual mostrado (puede ser de una categoría o mezcla)
+let currentImages = []; // conjunto actual usado por la galería y el lightbox
 let currentIndex = 0;
 const STEP = 6;
 
 const galleryEl = () => document.getElementById('galeria');
-const verMasBtn = () => document.getElementById('ver-mas');
 
 const lightboxEl = () => document.getElementById('lightbox');
 const lbInner = () => document.querySelector('.lb-inner');
@@ -34,8 +33,10 @@ async function initGallery() {
       galleryEl().innerHTML = '<p>No hay imágenes en el JSON.</p>';
       return;
     }
-    displayedImages = shuffle(allImages);
-    showImages(displayedImages.slice(0, STEP));
+
+    currentImages = shuffle(allImages).slice(0, STEP); // mostramos sólo 6 aleatorias al inicio
+    currentIndex = 0;
+    showImages(currentImages);
 
     // Lightbox events
     setupLightboxControls();
@@ -50,10 +51,12 @@ function showImages(images) {
   // images: array de objetos { jpg, webp, avif?, alt }
   const container = galleryEl();
   container.innerHTML = '';
-  displayedImages = images.slice(); // snapshot del conjunto actual mostrado
+
+  // Guardamos como conjunto actual (para lightbox / navegación)
+  currentImages = images.slice();
 
   images.forEach((imgObj, idx) => {
-    if (!imgObj || (!imgObj.jpg && !imgObj.webp)) {
+    if (!imgObj || (!imgObj.jpg && !imgObj.webp && !imgObj.avif)) {
       console.warn('Imagen con ruta inválida en JSON', imgObj);
       return;
     }
@@ -77,9 +80,9 @@ function showImages(images) {
     const image = document.createElement('img');
     image.className = 'gallery-img';
     image.loading = 'lazy';
-    image.src = imgObj.jpg || imgObj.webp;
+    image.src = imgObj.jpg || imgObj.webp || imgObj.avif;
     image.alt = imgObj.alt || '';
-    image.dataset.index = idx; // índice dentro de displayedImages
+    image.dataset.index = idx; // índice dentro de currentImages
 
     // click abre lightbox en la posición correspondiente
     image.addEventListener('click', (e) => {
@@ -109,21 +112,21 @@ function loadCategory(cat) {
     btn.classList.toggle('active', btn.dataset.filter === '.' + cat);
   });
 
-  // cargamos la categoría por bloques de STEP
-  displayedImages = data[cat].slice(); // copia
-  // iniciar desde el 0
+  // cargamos TODAS las imágenes de la categoría (sin cortar)
+  const categoryImages = data[cat].slice();
   currentIndex = 0;
-  showImages(displayedImages.slice(currentIndex, currentIndex + STEP));
+  showImages(categoryImages); // ahora showImages recibe el array completo de la categoría
 }
 
 function nextImages() {
-  if (!displayedImages || !displayedImages.length) return;
+  if (!currentImages || !currentImages.length) return;
 
   currentIndex += STEP;
-  if (currentIndex >= displayedImages.length) {
-    currentIndex = 0; // reinicia al llegar al final
+  if (currentIndex >= currentImages.length) {
+    currentIndex = 0; // reinicia al llegar al final (o quita este comportamiento si no lo quieres)
   }
-  showImages(displayedImages.slice(currentIndex, currentIndex + STEP));
+  // mostrar desde currentIndex (si quieres paginar)
+  showImages(currentImages.slice(currentIndex, currentIndex + STEP));
 }
 
 /* ---------- Lightbox / Modal ---------- */
@@ -164,9 +167,9 @@ function setupLightboxControls() {
 }
 
 function openLightbox(index) {
-  // index corresponde a displayedImages
-  if (!displayedImages || !displayedImages.length) return;
-  currentIndex = index % displayedImages.length;
+  // index corresponde a currentImages
+  if (!currentImages || !currentImages.length) return;
+  currentIndex = ((index % currentImages.length) + currentImages.length) % currentImages.length;
   updateLightboxContent();
   const lb = lightboxEl();
   lb.classList.remove('hidden');
@@ -187,14 +190,15 @@ function closeLightbox() {
 }
 
 function changeLightbox(direction) {
-  if (!displayedImages || !displayedImages.length) return;
-  currentIndex = (currentIndex + direction + displayedImages.length) % displayedImages.length;
+  if (!currentImages || !currentImages.length) return;
+  currentIndex = (currentIndex + direction + currentImages.length) % currentImages.length;
   updateLightboxContent();
   preloadImage(getImageSrc(getNextIndex()));
 }
 
 function updateLightboxContent() {
-  const obj = displayedImages[currentIndex];
+  const obj = currentImages[currentIndex];
+  if (!obj) return;
   const container = lbInner();
   container.innerHTML = ''; // limpiar
 
@@ -214,12 +218,11 @@ function updateLightboxContent() {
   }
 
   const img = document.createElement('img');
-  img.src = obj.jpg || obj.webp;
+  img.src = obj.jpg || obj.webp || obj.avif;
   img.alt = obj.alt || '';
   img.className = 'lb-img';
   img.loading = 'lazy';
 
-  // precarga: mostrar un pequeño placeholder si tarda (puedes mejorar con LQIP)
   img.addEventListener('error', () => {
     console.error('Error al cargar imagen lightbox:', img.src);
     lbCaption().textContent = 'Error al cargar imagen';
@@ -229,7 +232,7 @@ function updateLightboxContent() {
   container.appendChild(picture);
 
   // caption opcional
-  lbCaption().textContent = obj.alt || `${currentIndex + 1} / ${displayedImages.length}`;
+  lbCaption().textContent = obj.alt || `${currentIndex + 1} / ${currentImages.length}`;
 }
 
 function preloadImage(src) {
@@ -239,22 +242,24 @@ function preloadImage(src) {
 }
 
 function getImageSrc(idx) {
-  const o = displayedImages[idx];
+  const o = currentImages[idx];
   if (!o) return null;
   return o.webp || o.avif || o.jpg;
 }
 function getNextIndex() {
-  return (currentIndex + 1) % displayedImages.length;
+  return (currentIndex + 1) % currentImages.length;
 }
 
+/* ---------- scroll header / botones (igual que antes) ---------- */
 const h1 = document.getElementById('titulo-galeria');
 const buttons = document.getElementById('filter-buttons');
-const headerHeight = document.querySelector('.header').offsetHeight;
+const headerHeight = document.querySelector('.header') ? document.querySelector('.header').offsetHeight : 0;
 
 // Offset para que el scroll active cuando el h1 esté casi fuera de vista
-const triggerOffset = h1.offsetTop + h1.offsetHeight - headerHeight;
+const triggerOffset = h1 ? (h1.offsetTop + h1.offsetHeight - headerHeight) : 0;
 
 window.addEventListener('scroll', () => {
+  if (!h1 || !buttons) return;
   if (window.scrollY > triggerOffset) {
     // Oculta h1 y fija botones
     h1.classList.add('hidden-title');
@@ -265,7 +270,6 @@ window.addEventListener('scroll', () => {
     buttons.classList.remove('fixed-buttons');
   }
 });
-
 
 /* ---------- Helpers ---------- */
 function shuffle(arr) {

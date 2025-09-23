@@ -20,8 +20,8 @@ svg{display: none;}
 .menu-open-button {
     background:#bc9536;
     border-radius: 50%;
-    width: 3rem;
-    height: 3rem;
+    width: clamp(2.8rem,4vw,3rem);
+    height: clamp(2.8rem,4vw,3rem);
     color: white;
     text-align: center;
     line-height: 3rem;
@@ -121,3 +121,7 @@ img.item {
 .menu-open:checked~.menu-item:nth-of-type(4) {
   transition-delay: 400ms;
 } 
+
+@media (max-width:840px){
+
+}

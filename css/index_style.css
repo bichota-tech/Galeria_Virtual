@@ -21,7 +21,7 @@ header {
     top: 0;
     left: 0;
     width: 100%;
-    height: 5.5rem;
+    height: auto;
     z-index: 1000;
 }
 
@@ -38,7 +38,7 @@ main {
 }
 
 div.logo img {
-    margin-left: .5rem !important;
+    
     width: clamp(7rem, 12vw, 11rem) !important;
 }
 
@@ -87,7 +87,7 @@ a.button {
     border-color: #bc9536;
     position: relative;
     display: inline-block;
-    padding: 0.5em .7em;
+    padding: 0.5em .5em;
     transition: all 0.3s ease-in-out;
     text-align: center;
     text-decoration: none;

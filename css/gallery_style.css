@@ -5,18 +5,16 @@
 }
 
 .header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 60px;
-  background: rgb(14, 14, 14);
-  z-index: 1000;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height:auto;
+    background: rgb(14, 14, 14);
+    z-index: 1000;
 }
 
-div.logo img {
-    margin-left: .5rem !important;
+div.logo {
     width: clamp(7rem, 12vw, 11rem) !important;
 }
 
@@ -33,17 +31,17 @@ section#btnfiltro.portafolio {
     position: relative;
     top: rem;
     padding-top: 1rem;
-    padding-bottom: 1rem;
+
 }
 
 h1#titulo-galeria {
-    margin-top: 6rem;
+    margin-top: 4.5rem;
     transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
 .hidden-title {
-  transform: translateY(-100%);
-  opacity: 0;
+    transform: translateY(-100%);
+    opacity: 0;
 }
 
 div.decorativo {
@@ -60,19 +58,21 @@ div.mb-4.text-center {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    align-items: center;
     background-color: rgb(14, 14, 14);
     transition: all 0.3s ease;
 }
 
 .fixed-buttons {
-  position: fixed;
-  top: 60px; /* justo debajo del header */
-  left: 0;
-  width: 100%;
-  background: #fff;
-  padding: 10px 0;
-  z-index: 999;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: fixed;
+    top: 60px;
+    /* justo debajo del header */
+    left: 0;
+    width: 100%;
+    background: #fff;
+    padding: 10px 0;
+    z-index: 999;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 button.btn.btn-outline-dark.mx-1 {
@@ -88,8 +88,7 @@ button.btn.btn-outline-dark.mx-1 {
 }
 
 main#galeria.grid-galeria {
-    margin-inline: 1rem;
-    margin-block: 2rem;
+    margin-bottom: 2rem;
     width: 100%;
     display: flex;
     flex-direction: row;
@@ -126,17 +125,13 @@ main#galeria.grid-galeria {
         filter: brightness(2);
     }
 
-    /* brillo fuerte */
     60% {
         filter: brightness(1.3);
     }
 
-    /* leve resplandor */
     100% {
         filter: brightness(1);
     }
-
-    /* vuelve a la normalidad */
 }
 
 .gallery-img {
@@ -148,7 +143,6 @@ main#galeria.grid-galeria {
     display: block;
 }
 
-/* Lightbox */
 .lightbox {
     position: fixed;
     inset: 0;
@@ -212,11 +206,19 @@ main#galeria.grid-galeria {
     font-size: 0.95rem;
 }
 
+footer.footer-content {
+    background-color: rgb(14, 14, 14);
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    margin-top: auto;
+
+}
+
 @media (max-width:840px) {
     main#galeria {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
-        /* justify-content: ; */
         align-items: center;
 
     }
@@ -224,8 +226,27 @@ main#galeria.grid-galeria {
 
 @media (max-width:440px) {
 
+    header{
+        display: flex;
+        justify-content:space-between;
+        align-items: center ;
+        justify-content: center;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 5rem;
+    }
+
+    div.logo {
+        margin-top: .8rem !important;
+    }
+
     main#galeria.grid-galeria {
-        top: 25rem;
+        top: 23rem;
+        display: grid;
+        grid-template-columns: 1fr;
+        justify-items: center;
+        align-items: center;
     }
 
     div.menunav {
