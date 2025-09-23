@@ -19,21 +19,22 @@
 </head>
 
 <body>
-    <header>
+    <header class="header">
         <div class="logo"><img src="multimedia/logo_hevca.png" alt="logo marca"></div>
         <div class="menunav">
             <a href="index.html" class="nav-link">INICIO</a>
             <a href="index.html#servicios" class="nav-link">SERVICIOS</a>
-            <a href="gallery.html" class="nav-link">GALERÍA</a>
+            <a href="gallery.html" class="nav-link" id="activepage">GALERÍA</a>
             <a href="index.html#aboutme" class="nav-link">SOBRE MÍ</a>
             <a href="index.html#contacto" class="nav-link">CONTACTO</a>
             <a href="#" class="button">AGENDA TU SESIÓN</a>
         </div>
+        <div id="menu"></div>
     </header>
-    <div class="decorativo"></div>
     <section class="portafolio" id="btnfiltro">
-        <h1>Galería de Sesiones de Fotografía Profesional</h1>
-        <div class="mb-4 text-center">
+        <h1 id="titulo-galeria">Galería de Sesiones de Fotografía Profesional</h1>
+        <div class="decorativo"></div>
+        <div class="mb-4 text-center" id="filter-buttons">
             <button class="btn btn-outline-dark mx-1" data-filter=".corporativo">Sesión Corporativa</button>
             <button class="btn btn-outline-dark mx-1" data-filter=".comercial">Sesión Comercial</button>
             <button class="btn btn-outline-dark mx-1" data-filter=".boudoirArt">Sesión Boudoir & Artístico</button>
@@ -44,10 +45,36 @@
         </div>
     </section>
 
-    <main id="galeria"><!-- Contenedor de sesiones --></main>
+    <main id="galeria" class="grid-galeria"><!-- Contenedor de sesiones --></main>
 
+    <!-- Lightbox / Modal -->
+    <div id="lightbox" class="lightbox hidden" aria-hidden="true" role="dialog" aria-label="Visor de imágenes">
+        <button class="lb-close" aria-label="Cerrar">&times;</button>
+    <div class="lb-content">
+            <button class="lb-nav lb-prev" aria-label="Anterior">&#10094;</button>
+            <div class="lb-inner">
+                <!-- aquí se inyecta el <picture> grande -->
+            </div>
+            <button class="lb-nav lb-next" aria-label="Siguiente">&#10095;</button>
+        </div>
+        <div class="lb-caption" aria-live="polite"></div>
+    </div>
+
+    <script>
+        fetch("icono_hamburguesa.html").then(res => res.text()).then(data => {
+            document.getElementById("menu").innerHTML = data;
+        });
+
+        window.addEventListener('load', () => {
+            if (window.location.hash) {
+                const target = document.querySelector(window.location.hash);
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' }); // o sin smooth si quieres instantáneo
+                }
+            }
+        });
+    </script>
     <script src="js/gallery_jscript.js"></script>
-
 </body>
 
 </html>

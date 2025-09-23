@@ -6,8 +6,15 @@
     { "jpg": "multimedia/comercial2.jpg", "alt": "Sesión Comercial 2" },
     { "jpg": "multimedia/evento1.jpg", "alt": "Sesión de Eventos 1" },
     { "jpg": "multimedia/evento2.jpg", "alt": "Sesión de Eventos 2" },
-     { "jpg": "multimedia/familiar1.jpg", "alt": "Sesión Familiar 1" },
-    { "jpg": "multimedia/familiar2.jpg", "alt": "Sesión Familiar 2" }
+    { "jpg": "multimedia/beach.jpg", "alt": "Sesión Comercial 3" },
+    { "jpg": "multimedia/couple.jpg", "alt": "Sesión Familiar 3" },
+    { "jpg": "multimedia/footprints.jpg", "alt": "Sesión Especial 1" },
+    { "jpg": "multimedia/iceland.jpg", "alt": "Sesión Especial 2" },
+    { "jpg": "multimedia/icelands.jpg", "alt": "Sesión de Especial 3" },
+    { "jpg": "multimedia/sunset.jpg", "alt": "Sesión de Especial 4" },
+    { "jpg": "multimedia/woman.jpg", "alt": "Sesión Artístico 1" },
+    { "jpg": "multimedia/yoga.jpg", "alt": "Sesión Artístico 2" }
+    
   ],
   "comercial": [
     { "jpg": "multimedia/comercial1.jpg", "alt": "Sesión Comercial 1" },
