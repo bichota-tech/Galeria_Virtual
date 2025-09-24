@@ -37,6 +37,7 @@ section#btnfiltro.portafolio {
 h1#titulo-galeria {
     margin-top: 6rem;
     transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    cursor: default;
 }
 
 .hidden-title {
