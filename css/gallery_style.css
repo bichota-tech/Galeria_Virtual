@@ -35,8 +35,8 @@ section#btnfiltro.portafolio {
 }
 
 h1#titulo-galeria {
-    margin-top: 4.5rem;
-    transition: transform 0.3s ease, opacity 0.3s ease;
+    margin-top: 6rem;
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
 }
 
 .hidden-title {
@@ -61,6 +61,8 @@ div.mb-4.text-center {
     align-items: center;
     background-color: rgb(14, 14, 14);
     transition: all 0.3s ease;
+    padding-top: 2rem;
+    padding-bottom: 1rem;
 }
 
 .fixed-buttons {
@@ -70,7 +72,7 @@ div.mb-4.text-center {
     left: 0;
     width: 100%;
     background: #fff;
-    padding: 10px 0;
+    padding-bottom: 1rem;
     z-index: 999;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
@@ -88,7 +90,7 @@ button.btn.btn-outline-dark.mx-1 {
 }
 
 main#galeria.grid-galeria {
-    margin-bottom: 2rem;
+    padding-block: 1rem;
     width: 100%;
     display: flex;
     flex-direction: row;

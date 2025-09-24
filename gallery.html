@@ -1,72 +1,75 @@
 <!DOCTYPE html>
 <html lang="es">
 
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
-            integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-            crossorigin="anonymous"></script>
-        <style>
-            @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-        </style>
-        <script src="https://cdn.jsdelivr.net/npm/mixitup/dist/mixitup.min.js"></script>
-        <link rel="stylesheet" href="css/gallery_style.css">
-        <link rel="stylesheet" href="css/index_style.css">
-        <title>Galería HEVCA Photo&Art</title>
-    </head>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/mixitup/dist/mixitup.min.js"></script>
+    <link rel="stylesheet" href="css/gallery_style.css">
+    <link rel="stylesheet" href="css/index_style.css">
+    <title>Galería HEVCA Photo&Art</title>
+</head>
 
-    <body>
-        <header class="header">
-            <div class="logo"><img src="multimedia/logo_hevca.png" alt="logo marca"></div>
-            <div class="menunav">
-                <a href="index.html" class="nav-link">INICIO</a>
-                <a href="index.html#servicios" class="nav-link">SERVICIOS</a>
-                <a href="gallery.html" class="nav-link" id="activepage">GALERÍA</a>
-                <a href="index.html#aboutme" class="nav-link">SOBRE MÍ</a>
-                <a href="index.html#contacto" class="nav-link">CONTACTO</a>
-                <a href="#" class="button">AGENDA TU SESIÓN</a>
-            </div>
-            <div id="menu"></div>
-        </header>
-        <section class="portafolio" id="btnfiltro">
-            <h1 id="titulo-galeria">Galería de Sesiones de Fotografía Profesional</h1>
-            <div class="decorativo"></div>
-            <div class="mb-4 text-center" id="filter-buttons">
-                <button class="btn btn-outline-dark mx-1" data-filter=".corporativo">Sesión Corporativa</button>
-                <button class="btn btn-outline-dark mx-1" data-filter=".comercial">Sesión Comercial</button>
-                <button class="btn btn-outline-dark mx-1" data-filter=".boudoirArt">Sesión Boudoir & Artístico</button>
-                <button class="btn btn-outline-dark mx-1" data-filter=".evento">Sesión de Eventos</button>
-                <button class="btn btn-outline-dark mx-1" data-filter=".familiar">Sesión Familiar</button>
-                <button class="btn btn-outline-dark mx-1" data-filter=".infantil">Sesión Infantil</button>
-                <button class="btn btn-outline-dark mx-1" data-filter=".newborn">Sesión Newborn</button>
-            </div>
-        </section>
-
-        <main id="galeria" class="grid-galeria"><!-- Contenedor de sesiones --></main>
-
-        <!-- Lightbox / Modal -->
-        <div id="lightbox" class="lightbox hidden" aria-hidden="true" role="dialog" aria-label="Visor de imágenes">
-            <button class="lb-close" aria-label="Cerrar">&times;</button>
-            <div class="lb-content">
-                <button class="lb-nav lb-prev" aria-label="Anterior">&#10094;</button>
-                <div class="lb-inner">
-                    <!-- aquí se inyecta el <picture> grande -->
-                </div>
-                <button class="lb-nav lb-next" aria-label="Siguiente">&#10095;</button>
-            </div>
-            <div class="lb-caption" aria-live="polite"></div>
+<body>
+    <header class="header">
+        <div class="logo">
+            <a href="index.html">
+                <img src="multimedia/logo_hevca.png" alt="logo marca"></a>
         </div>
+        <div class="menunav">
+            <a href="index.html" class="nav-link">INICIO</a>
+            <a href="index.html#servicios" class="nav-link">SERVICIOS</a>
+            <a href="gallery.html" class="nav-link" id="activepage">GALERÍA</a>
+            <a href="index.html#aboutme" class="nav-link">SOBRE MÍ</a>
+            <a href="index.html#contacto" class="nav-link">CONTACTO</a>
+            <a href="#" class="button">AGENDA TU SESIÓN</a>
+        </div>
+        <div id="menu"></div>
+    </header>
+    <section class="portafolio" id="btnfiltro">
+        <h1 id="titulo-galeria">Galería de Sesiones de Fotografía Profesional</h1>
+        <div class="decorativo"></div>
+        <div class="mb-4 text-center" id="filter-buttons">
+            <button class="btn btn-outline-dark mx-1" data-filter=".corporativo">Sesión Corporativa</button>
+            <button class="btn btn-outline-dark mx-1" data-filter=".comercial">Sesión Comercial</button>
+            <button class="btn btn-outline-dark mx-1" data-filter=".boudoirArt">Sesión Boudoir & Artístico</button>
+            <button class="btn btn-outline-dark mx-1" data-filter=".evento">Sesión de Eventos</button>
+            <button class="btn btn-outline-dark mx-1" data-filter=".familiar">Sesión Familiar</button>
+            <button class="btn btn-outline-dark mx-1" data-filter=".infantil">Sesión Infantil</button>
+            <button class="btn btn-outline-dark mx-1" data-filter=".newborn">Sesión Newborn</button>
+        </div>
+    </section>
+
+    <main id="galeria" class="grid-galeria"><!-- Contenedor de sesiones --></main>
+
+    <!-- Lightbox / Modal -->
+    <div id="lightbox" class="lightbox hidden" aria-hidden="true" role="dialog" aria-label="Visor de imágenes">
+        <button class="lb-close" aria-label="Cerrar">&times;</button>
+        <div class="lb-content">
+            <button class="lb-nav lb-prev" aria-label="Anterior">&#10094;</button>
+            <div class="lb-inner">
+                <!-- aquí se inyecta el <picture> grande -->
+            </div>
+            <button class="lb-nav lb-next" aria-label="Siguiente">&#10095;</button>
+        </div>
+        <div class="lb-caption" aria-live="polite"></div>
+    </div>
 
 
-        <script>
-            fetch("icono_hamburguesa.html").then(res => res.text()).then(data => {
-                document.getElementById("menu").innerHTML = data;
-            });
-        </script>
-        <script src="js/gallery_jscript.js"></script>
-    </body>
+    <script>
+        fetch("icono_hamburguesa.html").then(res => res.text()).then(data => {
+            document.getElementById("menu").innerHTML = data;
+        });
+    </script>
+    <script src="js/gallery_jscript.js"></script>
+</body>
 
 </html>
