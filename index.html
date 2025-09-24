@@ -21,8 +21,9 @@
     <header>
         <div class="logo">
             <a href="#">
-                <img src="multimedia/logo_hevca.png" alt="logo marca"></div>
-            </a>
+                <img src="multimedia/logo_hevca.png" alt="logo marca">
+        </div>
+        </a>
 
         <div class="menunav">
             <a href="#" class="nav-link">INICIO</a>
@@ -108,7 +109,8 @@
                     <img src="multimedia/artistico1.jpg" alt="boudoirArt" class="card-img-top">
                     <div class="card-body">
                         <h5 class="card-text">Boudoir & Artístico</h5>
-                        <p class="card-text">Pensado para personas que desean celebrar su belleza y confianza a través del arte y la elegancia, ya sea como un regalo especial o para sí mismas.</p>
+                        <p class="card-text">Pensado para personas que desean celebrar su belleza y confianza a través
+                            del arte y la elegancia, ya sea como un regalo especial o para sí mismas.</p>
                         <a href="#" class="btn btn-primary">Más Información</a>
                     </div>
                 </div>
@@ -116,7 +118,8 @@
                     <img src="multimedia/familiar1.jpg" alt="eventos" class="card-img-top">
                     <div class="card-body">
                         <h5 class="card-text">Evento & Especiales</h5>
-                        <p class="card-text">Perfecto para quienes desean inmortalizar momentos importantes como bodas, aniversarios, cumpleaños o recién nacidos con fotografías profesionales.</p>
+                        <p class="card-text">Perfecto para quienes desean inmortalizar momentos importantes como bodas,
+                            aniversarios, cumpleaños o recién nacidos con fotografías profesionales.</p>
                         <a href="#" class="btn btn-primary">Más Información</a>
                     </div>
                 </div>
@@ -129,79 +132,11 @@
                 <button class="btn btn-outline-dark mx-1" data-filter=".corporativo">Corporativos</button>
                 <button class="btn btn-outline-dark mx-1" data-filter=".comercial">Comercial</button>
                 <button class="btn btn-outline-dark mx-1" data-filter=".boudoirArt">Boudoir & Artístico</button>
-                <button class="btn btn-outline-dark mx-1" data-filter=".especial">Eventos Especiales</button>
+                <button class="btn btn-outline-dark mx-1" data-filter=".familiar">Eventos & Especiales</button>
             </div>
-            <!-- Contenedor de sesiones -->
-            <div class="row container-filtros">
-                <!-- Corporativo -->
-                <div class="col-md-3 mix corporativo inicial">
-                    <img src="multimedia/corporativo1.jpg" alt="Imagen de Sesión Corporativa"
-                        class="card-img-top">
-                </div>
-                <div class="col-md-3 mix corporativo">
-                    <img src="multimedia/corporativo2.jpg" alt="Imagen de Sesión Corporativa"
-                        class="card-img-top">
-                </div>
-                <div class="col-md-3 mix corporativo">
-                    <img src="multimedia/corporativo1.jpg" alt="Imagen de Sesión Corporativa"
-                        class="card-img-top">
-                </div>
-                <div class="col-md-3 mix corporativo">
-                    <img src="multimedia/corporativo2.jpg" alt="Imagen de Sesión Corporativa"
-                        class="card-img-top">
-                </div>
-                <!-- Comercial -->
-                <div class="col-md-3 mix comercial inicial">
-                    <img src="multimedia/comercial1.jpg" alt="Imagen de Sesión Comercial"
-                        class="card-img-top">
-                </div>
-                <div class="col-md-3 mix comercial">
-                    <img src="multimedia/comercial2.jpg" alt="Imagen de Sesión Comercial"
-                        class="card-img-top">
-                </div>
-                <div class="col-md-3 mix comercial">
-                    <img src="multimedia/comercial1.jpg" alt="Imagen de Sesión Comercial"
-                        class="card-img-top">
-                </div>
-                <div class="col-md-3 mix comercial">
-                    <img src="multimedia/comercial2.jpg" alt="Imagen de Sesión Comercial"
-                        class="card-img-top">
-                </div>
-                <!-- BoudoirArt -->
-                <div class="col-md-3 mix boudoirArt inicial">
-                    <img src="multimedia/artistico1.jpg" alt="Imagen de Sesión Boudoir Artística"
-                        class="card-img-top">
-                </div>
-                <div class="col-md-3 mix boudoirArt">
-                    <img src="multimedia/artistico2.jpg" alt="Imagen de Sesión Boudoir Artística"
-                        class="card-img-top">
-                </div>
-                <div class="col-md-3 mix boudoirArt">
-                    <img src="multimedia/artistico1.jpg" alt="Imagen de Sesión Boudoir Artística"
-                        class="card-img-top">
-                </div>
-                <div class="col-md-3 mix boudoirArt">
-                    <img src="multimedia/artistico2.jpg" alt="Imagen de Sesión Boudoir Artística"
-                        class="card-img-top">
-                </div>
-                <!-- Especiales -->
-                <div class="col-md-3 mix especial inicial">
-                    <img src="multimedia/evento1.jpg" alt="Imagen de Sesión de Evento"
-                        class="card-img-top">
-                </div>
-                <div class="col-md-3 mix especial">
-                    <img src="multimedia/evento2.jpg" alt="Imagen de Sesión de Evento"
-                        class="card-img-top">
-                </div>
-                <div class="col-md-3 mix especial">
-                    <img src="multimedia/familiar1.jpg" alt="Imagen de Sesión de Evento"
-                        class="card-img-top">
-                </div>
-                <div class="col-md-3 mix especial">
-                    <img src="multimedia/newborn2.jpg" alt="Imagen de Sesión de Evento"
-                        class="card-img-top">
-                </div>
-            </div>
+            <!-- div contenedor de sesiones -->
+            <div id="gallery-container" class="row"></div>
+
             <a href="gallery.html" class="button">VER GALERÍA</a>
         </section>
 
@@ -212,8 +147,8 @@
                 <div class="carousel-inner">
                     <div class="carousel-item active">
                         <div class="cliente text-center">
-                            <img src="multimedia/cliente1.jpg" class="d-block mx-auto rounded-square"
-                                alt="cliente 1" width="150">
+                            <img src="multimedia/cliente1.jpg" class="d-block mx-auto rounded-square" alt="cliente 1"
+                                width="150">
                             <div class="subtitle mt-3">
                                 <h5 class="comment">Gracias a Hevca PhotoArt logramos una imagen
                                     profesional que refuerza la marca."
@@ -224,8 +159,8 @@
                     </div>
                     <div class="carousel-item">
                         <div class="cliente text-center">
-                            <img src="multimedia/cliente2.jpg" class="d-block mx-auto rounded-square"
-                                alt="cliente 2" width="150">
+                            <img src="multimedia/cliente2.jpg" class="d-block mx-auto rounded-square" alt="cliente 2"
+                                width="150">
                             <div class="subtitle mt-3">
                                 <h5 class="comment">Gracias a Hevca PhotoArt logramos una imagen
                                     profesional que refuerza la marca."
@@ -236,8 +171,8 @@
                     </div>
                     <div class="carousel-item">
                         <div class="cliente text-center">
-                            <img src="multimedia/cliente3.jpg" class="d-block mx-auto rounded-square"
-                                alt="cliente 3" width="150">
+                            <img src="multimedia/cliente3.jpg" class="d-block mx-auto rounded-square" alt="cliente 3"
+                                width="150">
                             <div class="subtitle mt-3">
                                 <h5 class="comment">Gracias a Hevca PhotoArt logramos una imagen
                                     profesional que refuerza la marca."
@@ -252,7 +187,7 @@
                 <img class="decoration" src="multimedia/deco.png" alt="imagen decorativa">
             </div>
         </section>
-
+        
         <section class="aboutme" id="aboutme">
             <h2 class="title">Detrás del lente</h2>
             <div class="description">
@@ -270,7 +205,7 @@
                 </div>
             </div>
         </section>
-        
+
         <section class="contacto" id="contacto">
             <h2 class="title">Hablemos de tí</h2>
             <h4 class="tipografia">Porque el primer paso para tu sesión perfecta comienza aquí.</h4>
@@ -284,7 +219,7 @@
 
                                 <input type="hidden" name="access_key" value="5122eb3b-775c-42ca-8e24-fd0bfc57ec5a">
 
-                               
+
                                 <div class="mb-3 position-relative">
                                     <i class="bi bi-person input-icon"></i>
                                     <input type="text" class="form-control" id="nombre" name="Nombre cliente:"
@@ -346,7 +281,6 @@
 
         </section>
 
-
         <footer>
             <div class="containerfooter">
                 <div class="footerlogo">
@@ -380,15 +314,6 @@
     <script>
         fetch("icono_hamburguesa.html").then(res => res.text()).then(data => {
             document.getElementById("menu").innerHTML = data;
-        });
-
-        window.addEventListener('load', () => {
-            if (window.location.hash) {
-                const target = document.querySelector(window.location.hash);
-                if (target) {
-                    target.scrollIntoView({ behavior: 'smooth' }); // o sin smooth si quieres instantáneo
-                }
-            }
         });
     </script>
     <script src="js/script.js"></script>

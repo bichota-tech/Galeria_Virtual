@@ -14,7 +14,9 @@ document.addEventListener("DOMContentLoaded", () => {
     //inicializar carrusel de clientes
   const carousel1 = new bootstrap.Carousel(clientesCarousel, {
     interval: 4000, // 5 segundos
-    ride: 'carousel'
+    ride: 'carousel',
+    wrap: true // vuelve al inicio tras el ultimo slide
+
   });
 
   //Botones
@@ -31,53 +33,6 @@ document.addEventListener("DOMContentLoaded", () => {
     carousel.next();
   });
 })
-
-// Inicializar MixItUp en el contenedor
-var containerEl = document.querySelector('.container-filtros');
-var mixer = mixitup(containerEl, {
-  animation: { duration: 300 }
-});
-
-// Guardamos categorías activas
-let activeFilters = [];
-
-// Todos los botones
-const buttons = document.querySelectorAll('[data-filter]');
-
-buttons.forEach(btn => {
-  btn.addEventListener('click', () => {
-    const filter = btn.getAttribute('data-filter');
-
-    // Activar/desactivar filtros
-    if (activeFilters.includes(filter)) {
-      activeFilters = activeFilters.filter(f => f !== filter);
-      btn.classList.remove('active');
-    } else {
-      activeFilters = []; // Permitir solo un filtro activo a la vez
-      buttons.forEach(b => b.classList.remove('active'));
-      activeFilters.push(filter);
-      btn.classList.add('active');
-    }
-
-    // Si no hay filtros, mostrar todo
-    if (activeFilters.length === 0) {
-      mixer.filter('.inicial'); // Mostrar solo la sesión inicial
-    } else {
-      mixer.filter(activeFilters.join(', '));
-    }
-  });
-});
-
-var mixer = mixitup('.container-filtros', {
-  animation: {
-    effects: 'fade scale(0.75)', // fade + zoom
-    duration: 500,               // velocidad (ms)
-    easing: 'ease-in-out'        // suavidad
-  }
-});
-
-// 👉 Mostrar inicialmente solo 1 sesión por categoría
-mixer.filter('.inicial');
 
 //Marcar enlace menunav al hacer click
 const navLinks = document.querySelectorAll(".nav-link");
@@ -110,6 +65,78 @@ navLinks.forEach(link => {
     link.classList.add("active");
   }
 });
+
+let data = {};
+let currentImages = [];
+const STEP = 4; // número de imágenes por categoría
+const galleryEl = () => document.getElementById('gallery-container');
+
+function shuffle(array) {
+  return array.sort(() => Math.random() - 0.5);
+}
+
+async function initIndexGallery() {
+  try {
+    const res = await fetch('imagenes.json');
+    if (!res.ok) throw new Error(`Fetch imagenes.json -> ${res.status} ${res.statusText}`);
+    data = await res.json();
+
+    // Asignar eventos a botones
+        document.querySelectorAll('button[data-filter]').forEach(btn => {
+      const cat = btn.dataset.filter.replace('.', '');
+      btn.addEventListener('click', () => {
+        loadCategory(cat);
+      });
+    });
+
+    // Mostrar 4 aleatorias al inicio (mezcla todas las categorías)
+    const allImages = Object.values(data).flat();
+    if (!allImages.length) {
+      galleryEl().innerHTML = '<p>No hay imágenes en el JSON.</p>';
+      return;
+    }
+
+    currentImages = shuffle(allImages).slice(0, STEP); // mostramos sólo 4
+    currentIndex = 0;
+    showImages(currentImages);
+
+  } catch (err) {
+    console.error('Error inicializando galería index:', err);
+    galleryEl().innerHTML = '<p>Error cargando imágenes.</p>';
+  }
+}
+
+function showImages(images) {
+  const container = galleryEl();
+  container.innerHTML = '';
+  images.forEach(img => {
+    const col = document.createElement('div');
+    col.className = 'col-md-4 mb-3';
+    col.innerHTML = `
+      <div class="card">
+        <img src="${img.jpg}" alt="${img.alt}" class="card-img-top">
+      </div>`;
+    container.appendChild(col);
+  });
+}
+
+function loadCategory(category) {
+  if (Array.isArray(data[category])) {
+    // Mostrar solo 4 de esa categoría, aleatorias
+    currentImages = shuffle(data[category]).slice(0, STEP);
+  } else {
+    currentImages = [];
+  }
+  
+  showImages(currentImages);
+}
+
+// Inicializar
+initIndexGallery();
+
+
+
+
 
 // Validación Bootstrap + feedback
     // (function () {

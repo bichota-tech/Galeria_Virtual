@@ -65,15 +65,6 @@
             fetch("icono_hamburguesa.html").then(res => res.text()).then(data => {
                 document.getElementById("menu").innerHTML = data;
             });
-
-            window.addEventListener('load', () => {
-                if (window.location.hash) {
-                    const target = document.querySelector(window.location.hash);
-                    if (target) {
-                        target.scrollIntoView({ behavior: 'smooth' }); // o sin smooth si quieres instantáneo
-                    }
-                }
-            });
         </script>
         <script src="js/gallery_jscript.js"></script>
     </body>

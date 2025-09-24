@@ -21,7 +21,7 @@ header {
     top: 0;
     left: 0;
     width: 100%;
-    height: auto;
+    height: 5.5rem;
     z-index: 1000;
 }
 
@@ -137,8 +137,7 @@ a.button:hover {
 section {
     width: 100%;
     height: auto;
-    text-align: center;
-    scroll-margin-top: 6rem;
+    text-align: center;  
 }
 
 h2.title {
@@ -168,6 +167,11 @@ p {
     font-size: clamp(1.1rem, 3vw, 1.5rem);
 }
 
+[id] {
+    scroll-margin-top: 6rem;
+}
+    
+
 /*CARRUSEL INICIO - TESTIMONIO*/
 div#mycarousel.carousel-inner,
 div#mycarousel,
@@ -175,6 +179,10 @@ div#mycarousel img.d-block {
     max-height: 50rem;
     width: 100%;
     cursor: no-drop;
+}
+
+.carousel-fade .carousel-item { /*testimonio*/
+  transition: opacity 0.8s ease-in-out !important; /* Ajusta la duración y la función de temporización */
 }
 
 /*Inicio*/
@@ -284,11 +292,6 @@ button.btn.btn-outline-dark.mx-1:hover {
     background-color: #bc9536;
 }
 
-div.mb-4.text-center .mixitup-control-active {
-    background-color: #bc9536 !important;
-    font-weight: 600 !important;
-}
-
 div.row.container-filtros {
     margin-bottom: 2rem;
     margin-inline: 1rem;
@@ -298,18 +301,27 @@ div.row.container-filtros {
     gap: .5rem;
 }
 
-div.col-md-3.mix {
+div.col-md-4.mb-3 {
     width: auto;
     height: auto;
     border-radius: 5px;
     padding: 0;
-    
 }
 
-div.col-md-3:hover {
-    background: rgba(255, 255, 255, 0.1);
-    box-shadow: 0 0 10px #bc9536;
-    /* sombra difusa hacia afuera */
+div#gallery-container.row {
+    margin-bottom: 2rem;
+    margin-inline: 1rem;
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    width: 100%;
+}
+
+img.card-img-top {
+    width: clamp(15rem, 20vw, 20rem);
+    height: auto;
+    border-radius: 5px;
 }
 
 .portafolio a.button {
@@ -628,6 +640,9 @@ a {
         display: none;
     }
 
+    [id] {
+        scroll-margin-top: 5rem;
+    }
     div.home {
         display: flex;
         flex-direction: column;
