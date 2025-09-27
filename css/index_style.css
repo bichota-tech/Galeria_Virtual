@@ -25,7 +25,8 @@ header {
     z-index: 1000;
 }
 
-.header-spacer {/* igual que header */
+.header-spacer {
+    /* igual que header */
     height: 5rem;
 }
 
@@ -36,7 +37,7 @@ main {
 }
 
 div.logo img {
-    
+
     width: clamp(7rem, 12vw, 11rem) !important;
 }
 
@@ -135,7 +136,7 @@ a.button:hover {
 section {
     width: 100%;
     height: auto;
-    text-align: center;  
+    text-align: center;
 }
 
 h2.title {
@@ -168,7 +169,7 @@ p {
 [id] {
     scroll-margin-top: 5rem;
 }
-    
+
 
 /*CARRUSEL INICIO - TESTIMONIO*/
 div#mycarousel.carousel-inner,
@@ -179,8 +180,10 @@ div#mycarousel img.d-block {
     cursor: no-drop;
 }
 
-.carousel-fade .carousel-item { /*testimonio*/
-  transition: opacity 0.8s ease-in-out !important; /* Ajusta la duración y la función de temporización */
+.carousel-fade .carousel-item {
+    /*testimonio*/
+    transition: opacity 0.8s ease-in-out !important;
+    /* Ajusta la duración y la función de temporización */
 }
 
 /*Inicio*/
@@ -219,8 +222,9 @@ div.cliente.text-center {
 img.d-block.mx-auto.rounded-square {
     border-radius: 50%;
     max-height: 8rem;
-    max-width: 7rem; 
+    max-width: 7rem;
 }
+
 /*---------------------------------*/
 
 
@@ -235,7 +239,8 @@ div.sesiones {
     margin-inline: 1.5rem;
 }
 
-div.card { /*cards de servicios y cards de galeria*/
+div.card {
+    /*cards de servicios y cards de galeria*/
     align-items: center;
     background-color: transparent;
     border-color: transparent;
@@ -289,6 +294,11 @@ button.btn.btn-outline-dark.mx-1:hover {
     background-color: #bc9536;
 }
 
+.activa {
+    background-color: #bc9536 !important;
+    font-weight: 600 !important;
+}
+
 div.row.container-filtros {
     margin-bottom: 2rem;
     display: grid;
@@ -308,9 +318,9 @@ div#gallery-container.row {
     gap: 1rem;
 }
 
-div#gallery-container.row .card{
+div#gallery-container.row .card {
     overflow: hidden;
-    
+
 }
 
 div.col-md-4.mb-3 {
@@ -318,10 +328,10 @@ div.col-md-4.mb-3 {
     height: auto;
     border-radius: 5px;
     padding: 0;
-    margin: 0!important;
+    margin: 0 !important;
 }
 
-div.col-md-4.mb-3 .card{
+div.col-md-4.mb-3 .card {
     margin: 0;
 }
 
@@ -334,7 +344,7 @@ div.col-md-4.mb-3 img.card-img-top {
     filter: grayscale(60%);
 }
 
-div#gallery-container.row .card:hover img.card-img-top{
+div#gallery-container.row .card:hover img.card-img-top {
     transform: scale(1.1);
     filter: grayscale(0%);
 }
@@ -354,11 +364,12 @@ section#clientes.testimonios {
     width: 100%;
 }
 
-section#clientes.testimonios p{
+section#clientes.testimonios p {
     padding-bottom: 2rem;
 }
 
-img.decoration {display: none;
+img.decoration {
+    display: none;
     position: absolute;
     bottom: -220%;
     left: 50%;
@@ -371,10 +382,10 @@ img.decoration {display: none;
 
 /*Sobre mi -+-+-+-+-*/
 
-section#aboutme.aboutme{
+section#aboutme.aboutme {
     background-image: url("../multimedia/profile.jpg");
     background-position: top;
-    background-repeat:no-repeat;
+    background-repeat: no-repeat;
     background-size: cover;
     display: flex;
     flex-direction: column;
@@ -517,14 +528,16 @@ textarea.form-control {
 
 div.socialmedia {
     position: fixed;
-    top: 89%;/* Mitad vertical */
-    right: 10px;/* Separado del borde derecho */
+    top: 89%;
+    /* Mitad vertical */
+    right: 10px;
+    /* Separado del borde derecho */
     transform: translateY(-50%);
     display: flex;
     flex-direction: column;
     gap: 15px;
     z-index: 1000;
-   
+
 }
 
 a.mx-2 {
@@ -553,7 +566,7 @@ div.containerfooter {
     align-items: center;
 }
 
-div.containerfooter a:hover{
+div.containerfooter a:hover {
     color: #bc9536;
 }
 
@@ -565,11 +578,12 @@ div.containerfooter a:hover{
     display: flex;
     flex-direction: row;
     justify-items: center;
-    align-items:center;
+    align-items: center;
     column-gap: 1rem;
+    font-size: clamp(0.72rem, 2vw, 1rem);
 }
 
-div.redes ul{
+div.redes ul {
     display: flex;
     flex-direction: row;
     column-gap: 1rem;
@@ -578,7 +592,7 @@ div.redes ul{
 }
 
 ul {
-    
+
     list-style: none;
     margin-top: .5rem;
 }
@@ -587,15 +601,14 @@ div.colabs {
     margin-top: .8rem;
     margin-right: 5rem;
     text-align: right;
+    font-size: clamp(0.72rem, 2vw, 1rem);
 }
 
-div.footer-content p{
+div.footer-content p {
     text-align: center;
     font-size: smaller;
-    margin-bottom: .5rem;
+    margin: .5rem;
 }
-
-
 
 a {
     text-decoration: none;
@@ -605,9 +618,10 @@ a {
 
 @media (max-width:1024px) {
 
-    div.sesiones, div#gallery-container.row {
+    div.sesiones,
+    div#gallery-container.row {
         grid-template-columns: repeat(2, 1fr);
-    
+
     }
 
 }
@@ -618,7 +632,7 @@ a {
     }
 
     [id] {
-    scroll-margin-top: 5rem;
+        scroll-margin-top: 5rem;
     }
 
     div.sesiones {
@@ -630,7 +644,8 @@ a {
     div.card {
         width: 100%;
         height: auto;
-        column-gap: 1rem;;
+        column-gap: 1rem;
+        ;
     }
 
     div#gallery-container.row {
@@ -650,8 +665,8 @@ a {
 
     header {
         display: flex;
-        justify-content:space-between;
-        align-items: center ;
+        justify-content: space-between;
+        align-items: center;
         top: 0;
         left: 0;
         width: 100%;
@@ -659,7 +674,7 @@ a {
     }
 
     [id] {
-    scroll-margin-top: 5rem;
+        scroll-margin-top: 5rem;
     }
 
     div.menunav {
@@ -684,10 +699,11 @@ a {
     [id] {
         scroll-margin-top: 5rem;
     }
+
     div.home {
         display: flex;
         flex-direction: column;
-        justify-content:center;
+        justify-content: center;
         align-items: center;
         text-align: center;
         background-image: url("../multimedia/home_movil.jpg");
@@ -718,7 +734,8 @@ a {
     div.card {
         width: 100%;
         height: auto;
-        column-gap: 1rem;;
+        column-gap: 1rem;
+        ;
     }
 
     div#gallery-container.row {
@@ -736,16 +753,16 @@ a {
         position: absolute;
         top: 10%;
         text-shadow:
-        1px 1px 2px black,
-        0 0 1em #bc9536,
-        0 0 0.2em #bc9536;
-    
+            1px 1px 2px black,
+            0 0 1em #bc9536,
+            0 0 0.2em #bc9536;
+
     }
 
     section.portafolio h2.title {
         margin-top: 0;
     }
-    
+
     section.testimonios h2.title {
         margin-top: 1rem;
     }
@@ -763,7 +780,7 @@ a {
 
     img.d-block.mx-auto.rounded-square {
         max-width: 6.2rem !important;
-        max-height: 6.5rem !important; 
+        max-height: 6.5rem !important;
     }
 
     div.description {
@@ -776,13 +793,44 @@ a {
         margin-bottom: 1rem;
     }
 
+    #imgfooter {
+        width: 5.5rem !important;
+    }
+
     .footerlogo {
         display: flex;
         flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        column-gap: 0 !important;
+    }
+
+    div.redes ul {
+        display: flex;
+        flex-direction: column;
+        margin-left: 1rem;
+    }
+
+    div.colabs {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-left: 1rem;
+        margin-top: 0;
+    }
+
+    div.colabs h5 {
+        font-size: 1.1rem;
     }
 
     ul {
-        margin-top: 0;
+        padding: 0;
+        margin-top: 0 !important;
+    }
+
+    div.socialmedia{
+        top: 85%;
     }
 
 }

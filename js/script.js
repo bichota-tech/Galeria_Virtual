@@ -127,6 +127,9 @@ function loadCategory(category) {
   } else {
     currentImages = [];
   }
+  document.querySelectorAll('button[data-filter]').forEach(btn => {
+    btn.classList.toggle('activa', btn.dataset.filter === '.' + category);
+  });
   
   showImages(currentImages);
 }
