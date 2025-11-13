@@ -493,6 +493,13 @@ section.contacto h4 {
     padding-left: 2.5rem;
 }
 
+.form-select{
+    border-radius: 12px;
+    padding-left: 2.5rem;
+    color: #555a5f;
+
+}
+
 textarea.form-control {
     resize: none;
     overflow-y: scroll;
@@ -503,7 +510,7 @@ textarea.form-control {
     top: 50%;
     left: 1rem;
     transform: translateY(-50%);
-    color: #6c757d;
+    color: #53585e;
 }
 
 .bi-pencil-square.input-icon {
