@@ -514,8 +514,12 @@ textarea.form-control {
     color: #53585e;
 }
 
-.bi-pencil-square.input-icon {
+.bi-pencil-square.input-icon{
     top: 14%;
+}
+
+.bi-camera2.input-icon {
+    top: 70%;
 }
 
 .btn-custom {
@@ -568,6 +572,7 @@ a.mx-2:hover {
 div.containerfooter {
     width: 100%;
     height: auto;
+    background-color: #0e0e0e;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
