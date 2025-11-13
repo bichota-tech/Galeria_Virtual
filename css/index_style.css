@@ -79,7 +79,7 @@ div.logoclientes {
 /*GENERALES-+--++-+ */
 
 a.button {
-    color: white;
+    color: black;
     background: #bc9536;
     border-width: 2px;
     border-style: solid;
@@ -128,7 +128,7 @@ a.button:hover:after {
 }
 
 a.button:hover {
-    color: white;
+    color: black;
     background-color: #bc9536;
     border-color: #bc9536;
 }
