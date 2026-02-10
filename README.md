@@ -1,91 +1,93 @@
-# 📸 Galería Virtual
+# Galería Virtual — Portfolio Fotográfico (learning in progress)
 
-Proyecto web en desarrollo cuyo objetivo es **afianzar y atraer clientes potenciales**, mostrando el potencial de la **fotografía profesional** a través de una galería virtual, además de dar a conocer un poco más a la persona detrás del lente.
+Proyecto web orientado a mostrar trabajos fotográficos por categorías, con una experiencia visual clara y accesible.  
+El objetivo es practicar **maquetación responsive**, **estructura de contenido** y **UX de galería**.
 
----
-
-## 📖 Índice
-1. [Descripción](#-descripción)
-2. [Características](#-características)
-3. [Tecnologías y Herramientas](#-tecnologías-y-herramientas)
-4. [Instalación](#-instalación)
-5. [Uso](#-uso)
-6. [Estructura del Proyecto](#-estructura-del-proyecto)
-7. [Capturas de Pantalla](#-capturas-de-pantalla)
-8. [Estado del Proyecto](#-estado-del-proyecto)
-9. [Autoría](#-autoría)
+Web project focused on showcasing photography work by categories with a clear and accessible visual experience.  
+The goal is to practice **responsive layout**, **content structure**, and **gallery UX**.
 
 ---
 
-## 📝 Descripción
-La **Galería Virtual** busca transmitir el valor de la fotografía profesional mediante una plataforma accesible y atractiva. Los usuarios pueden explorar diferentes categorías, interactuar con información adicional en modales y contactar fácilmente a través de un formulario.
+## 🎯 Propósito / Purpose (aprendizaje / learning)
+Este proyecto me permite:
+
+- Diseñar una galería organizada por categorías
+- Practicar UI con **modales** e interacción simple
+- Consolidar estructura de HTML y CSS en un proyecto real
+
+This project helps me:
+
+- Design a category-based gallery
+- Practice UI with **modals** and simple interaction
+- Strengthen HTML/CSS structure in a real project
 
 ---
 
-## ✨ Características
-- ✅ Diseño **responsive** adaptable a distintos dispositivos.  
-- ✅ **Galería de imágenes por categorías**.  
-- ✅ **Modal** con información adicional.  
-- ✅ **Formulario de contacto** para conectar con el fotógrafo.  
-- ✅ Diseño limpio y profesional, enfocado en la experiencia del usuario.  
+## ✨ Funcionalidades actuales / Current features
+- Galería por categorías
+- Modal con información adicional
+- Diseño responsive
 
 ---
 
-## 🛠️ Tecnologías y Herramientas
-- **Lenguajes:** HTML, CSS, JavaScript  
-- **Frameworks/Librerías:** Bootstrap  
-- **Diseño y Maquetación:** Figma, Canva, Google Fonts  
-- **Control de Versiones:** Git & GitHub  
+## 🧩 Tecnologías / Tech stack
+- **HTML5**
+- **CSS3**
+- **JavaScript**
+- **Bootstrap**
 
 ---
 
-## ⚙️ Instalación
-Clona el repositorio y abre el proyecto en tu navegador:
+## 🧠 Aprendizajes clave / Key learnings
+- Organización visual de contenido multimedia
+- Adaptación responsive en distintos tamaños
+- Uso de modales para información adicional
 
+---
+
+## ⚠️ Limitaciones actuales / Current limitations
+- Sin backend
+- Carga manual de imágenes
+- Sin filtros dinámicos reales
+
+---
+
+## 🔮 Próximas mejoras / Next steps
+- Optimizar imágenes y carga progresiva
+- Añadir filtros reales por categorías
+- Mejorar el formulario de contacto
+- Añadir sección de autoría con más contexto
+
+---
+
+## 🚀 Uso local / Local usage
 ```bash
 git clone https://github.com/bichota-tech/Galeria_Virtual.git
 cd Galeria_Virtual
+# Abrir index.html en el navegador
+```
 
 ---
 
-## ▶️ Uso
-
-1. Abre el archivo index.html en tu navegador.
-
-2. Navega entre las categorías de la galería.
-
-3. Accede al modal con más información.
-
-4. Completa el formulario de contacto para enviar tu consulta.
-
----
-
-## 📂 Estructura del Proyecto
+## 📂 Estructura general / Structure
+```
 Galeria_Virtual/
-│── 
-│── 
-│── 
-└── 
-    ├── 
-    ├── 
-    └──
+├── index.html
+├── gallery.html
+├── css/
+├── js/
+├── multimedia/
+└── imagenes.json
+```
 
 ---
 
-## 📸 Capturas de Pantalla
-
-(Próximamente – espacio reservado para imágenes del proyecto en acción)
-
----
-
-## 🚧 Estado del Proyecto
-
-El proyecto está en desarrollo. Una vez lanzado, se mantendrá en mejora continua para optimizar la experiencia del usuario y añadir nuevas funcionalidades.
+## 👤 Autor / Author
+Ada (bichota-tech)  
+GitHub: https://github.com/bichota-tech  
 
 ---
 
-## 👩‍💻 Autoría
-
-Desarrollado por Ada (bichota-tech).
-📩 Contacto: adalvarez2021@gmail.com – linkedin.com/acma 
-
+## 📄 Licencia / License
+Este proyecto se publica con fines demostrativos.  
+This project is published for demonstration purposes.
